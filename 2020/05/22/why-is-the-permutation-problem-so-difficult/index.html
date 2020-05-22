@@ -63,7 +63,7 @@
 <meta property="og:site_name" content="湖面">
 <meta property="og:description" content="自从开学起，我已经与排列组合折腾了好几个月了。在此过程中，我也一直在反复思考、追问一个问题：「排列组合为什么这么难？」然而直到今天，我也只有了一些模糊的思路而已。故记录如下。首先，我们先要搞清楚的是「排列组合难在哪里？」我认为最困扰我的一点是：有太多的「做题技巧」，而其中绝大多数的适用范围都是不明确的。也就是说，当看到一个问题时，我会想到很多个可能的解决方法，却又感觉哪一个都不像。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-22T15:15:55.004Z">
+<meta property="og:updated_time" content="2020-05-22T15:46:53.566Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排列组合为什么这么难">
 <meta name="twitter:description" content="自从开学起，我已经与排列组合折腾了好几个月了。在此过程中，我也一直在反复思考、追问一个问题：「排列组合为什么这么难？」然而直到今天，我也只有了一些模糊的思路而已。故记录如下。首先，我们先要搞清楚的是「排列组合难在哪里？」我认为最困扰我的一点是：有太多的「做题技巧」，而其中绝大多数的适用范围都是不明确的。也就是说，当看到一个问题时，我会想到很多个可能的解决方法，却又感觉哪一个都不像。">
@@ -236,7 +236,7 @@
                 
               
 
-              <time title="创建时间：2020-05-22 23:14:58 / 修改时间：23:15:55" itemprop="dateCreated datePublished" datetime="2020-05-22T23:14:58+08:00">2020-05-22</time>
+              <time title="创建时间：2020-05-22 23:14:58 / 修改时间：23:46:53" itemprop="dateCreated datePublished" datetime="2020-05-22T23:14:58+08:00">2020-05-22</time>
             </span>
           
             
@@ -469,6 +469,56 @@ C^{2}_{3}&=\dfrac {3!}{2!\left( 3-2\right) !}\\
 
   
 
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
   
 
   
