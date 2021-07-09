@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"richard-zheng.github.io","root":"/","images":"/images","scheme":"Mist","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="问题描述 给定一组物品，每种物品都有自己的重量和价值，现有一个背包，能承受的重量有限，在受限制的重量下，取若干物品，使得总价值最大。这一类问题，被称为背包问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="01背包问题笔记">
+<meta property="og:url" content="https://richard-zheng.github.io/2020/02/22/01-knapsack-problem-notes/index.html">
+<meta property="og:site_name" content="湖面">
+<meta property="og:description" content="问题描述 给定一组物品，每种物品都有自己的重量和价值，现有一个背包，能承受的重量有限，在受限制的重量下，取若干物品，使得总价值最大。这一类问题，被称为背包问题。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://res.jisuanke.com/img/upload/20180314/9eaf31cae132f8ab5fd58b23cbdeecb081b6e838.png">
+<meta property="og:image" content="https://res.jisuanke.com/img/upload/20180314/da287b0ea6a685b628d4e0a7a37678bcfa038d35.png">
+<meta property="og:image" content="https://res.jisuanke.com/img/upload/20180314/8395d01da97dd456b8599cdcddc9646878e22456.png">
+<meta property="og:image" content="https://res.jisuanke.com/img/upload/20180314/ef51698c80b97f920538c50bd6ac862bf2577325.png">
+<meta property="article:published_time" content="2020-02-22T08:44:54.000Z">
+<meta property="article:modified_time" content="2020-02-22T08:44:54.000Z">
+<meta property="article:author" content="Richard Zheng">
+<meta property="article:tag" content="信息学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://res.jisuanke.com/img/upload/20180314/9eaf31cae132f8ab5fd58b23cbdeecb081b6e838.png">
+
+
+<link rel="canonical" href="https://richard-zheng.github.io/2020/02/22/01-knapsack-problem-notes/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://richard-zheng.github.io/2020/02/22/01-knapsack-problem-notes/","path":"2020/02/22/01-knapsack-problem-notes/","title":"01背包问题笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>01背包问题笔记 | 湖面</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">湖面</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%E8%A7%A3%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">思路解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%88%9D%E7%BA%A7%E6%9A%B4%E5%8A%9B%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">最初级&#x2F;暴力的算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF"><span class="nav-number">2.2.</span> <span class="nav-text">优化思路</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%B1%95%E7%A4%BA"><span class="nav-number">3.</span> <span class="nav-text">算法展示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">3.1.</span> <span class="nav-text">动态规划是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E6%BC%94%E7%A4%BA"><span class="nav-number">3.2.</span> <span class="nav-text">图片演示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81"><span class="nav-number">3.3.</span> <span class="nav-text">参考代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Richard Zheng</p>
+  <div class="site-description" itemprop="description">人生天地间，忽如远行客。</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://richard-zheng.github.io/2020/02/22/01-knapsack-problem-notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Richard Zheng">
+      <meta itemprop="description" content="人生天地间，忽如远行客。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="湖面">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          01背包问题笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-02-22 16:44:54" itemprop="dateCreated datePublished" datetime="2020-02-22T16:44:54+08:00">2020-02-22</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="问题描述">问题描述</h3>
+<p>给定一组物品，每种物品都有自己的重量和价值，现有一个背包，能承受的重量有限，在受限制的重量下，取若干物品，使得总价值最大。这一类问题，被称为背包问题。</p>
+<span id="more"></span>
+<p>当前有 <span class="math inline">\(N\)</span> 件物品和一个容积为 <span class="math inline">\(V\)</span> 的背包。已知第 <span class="math inline">\(i\)</span> 件物品的体积是 <span class="math inline">\(c_i\)</span>，价值是 <span class="math inline">\(w_i\)</span> 。 由于每种物品有且仅有一件，因此只能选择放或不放，我们称之为 01 背包问题。 现在你需要选出若干件物品，在它们的重量之和不超过 <span class="math inline">\(V\)</span> 的条件下，使得价值总和尽可能大。</p>
+<h3 id="思路解析">思路解析</h3>
+<h4 id="最初级暴力的算法">最初级/暴力的算法</h4>
+<p>给物品随机标上编号，对每个物品，都枚举选/不选两种结果，用搜索遍历所有可能的情况。结果写入一张表中：一列为体积，一列为最大价值。每次枚举都检测当前背包内物体体积和价值，并与表中大于等于该体积对应的价值数据比对，如当前结果更优则更新表中价值。</p>
+<h4 id="优化思路">优化思路</h4>
+<p>上面写的初级算法运行下来，实际上就形成了搜索树。搜索树的第几行代表着有几个物品可供选择，一行中就包含了所有可能出现的情况。我们现在想要做的，无非就是尝试减少不必要的结果的出现。</p>
+<p>为了方便我们找到「不必要的结果」，我们需要把被舍弃的（也就是被更新掉的）情况与被保留的进行比较。并且显然要简化掉搜索树的整一行是几乎不可能的，所以我们要选择BFS搜索而不是DFS搜索。</p>
+<p>很自然地，我们会发现，在同一行中会出现两个总体积相同而总价值不同的情况。又因为对这样的两个节点生成子节点的方式是相同的，自然应该舍弃价值较小的那一个节点了。但是这还不够，我们又发现甚至还有些节点的总体积比另一些要小，总价值反而还更大了，这怎么办呢？如果把节点都拿出来再这样一点一点比对、舍弃，还是太麻烦了。有没有什么办法能够在写下节点时，就看出这个节点够不够好呢？</p>
+<p>为了解决这个问题，我们可以尝试把体积变得更加「连续」。也就是我们把不在节点中出现的背包容量也写下来，从0, 1, 2, 3, ..., <span class="math inline">\(V\)</span>列成一个表格。那么在每写一个节点时，我们就把表格中大于等于节点体积的格子都遍历一遍，如果这个节点的价值比格子中的价值大，那么就把它替换掉。如果不是，那么就忽略。</p>
+<p>鉴于题目本身就对背包容量<span class="math inline">\(V\)</span>有要求，这个<span class="math inline">\(V\)</span>本身也是很可能不正好等于要找的最优节点的总体积，我们就完全抛弃BFS搜索，只用表格。具体的解决办法如下：</p>
+<p>1.体积和价值是绑定在一起的。题目对总体积有要求，所以求解时限制总体积。</p>
+<p>2.在对每一个物品进行遍历时，已知的就是前面已经遍历过的物品在各种体积限制下价值最大化的情况。（最开始是不放任何物品，所以第一行都为零。）我们要做的就是继续列出在各种重量条件下，上面已经遍历过的物品加上这个物品怎样选择能让价值最大。</p>
+<p>3.因为体积和价值绑定在一起，价值最大化时总体积越大价值一定越大。填表时只是在决策是否需要放入这个物品。</p>
+<p>4.填写每一格时，先看此格对应的总体积是多少，如果总体积还没有决策的物品的体积大，就不可能将这个物品放入，故直接填上一行的情况。当体积足够放入时，比较放或不放的价值哪个更大。假设放入，则价值为「总体积减去物品体积时的最大价值」（直接查上一行的表即可得到）加上这个物品的价值。假设不放，则价值为上一行的价值。</p>
+<h3 id="算法展示">算法展示</h3>
+<h4 id="动态规划是什么">动态规划是什么</h4>
+<p>动态规划（英语：Dynamic programming，简称DP）是一种在数学、管理科学、计算机科学、经济学和生物信息学中使用的，通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。<sup>[1]</sup></p>
+<p>如果递归算法反复求解相同的子问题，就称为具有重叠子问题（overlapping subproblems）性质。 在动态规划算法中使用数组来保存子问题的解，这样子问题多次求解的时候可以直接查表不用调用函数递归。<sup>[2]</sup></p>
+<p>实际上，刚才的思路蕴含的就是动态规划的思想。</p>
+<h4 id="图片演示">图片演示</h4>
+<figure>
+<img src="https://res.jisuanke.com/img/upload/20180314/9eaf31cae132f8ab5fd58b23cbdeecb081b6e838.png" alt="img1" /><figcaption aria-hidden="true">img1</figcaption>
+</figure>
+<figure>
+<img src="https://res.jisuanke.com/img/upload/20180314/da287b0ea6a685b628d4e0a7a37678bcfa038d35.png" alt="img2" /><figcaption aria-hidden="true">img2</figcaption>
+</figure>
+<figure>
+<img src="https://res.jisuanke.com/img/upload/20180314/8395d01da97dd456b8599cdcddc9646878e22456.png" alt="img3" /><figcaption aria-hidden="true">img3</figcaption>
+</figure>
+<figure>
+<img src="https://res.jisuanke.com/img/upload/20180314/ef51698c80b97f920538c50bd6ac862bf2577325.png" alt="img4" /><figcaption aria-hidden="true">img4</figcaption>
+</figure>
+<h4 id="参考代码">参考代码</h4>
+<p>来源见[3]</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> (x &gt; y) ? x : y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">knapSack</span><span class="params">(<span class="keyword">int</span> W, <span class="keyword">int</span> w[], <span class="keyword">int</span> v[], <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">int</span> i, wt;</span><br><span class="line">   <span class="keyword">int</span> K[n + <span class="number">1</span>][W + <span class="number">1</span>];</span><br><span class="line">   <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= n; i++) &#123;</span><br><span class="line">      <span class="keyword">for</span> (wt = <span class="number">0</span>; wt &lt;= W; wt++) &#123;</span><br><span class="line">         <span class="keyword">if</span> (i == <span class="number">0</span> || wt == <span class="number">0</span>)</span><br><span class="line">         K[i][wt] = <span class="number">0</span>;</span><br><span class="line">         <span class="keyword">else</span> <span class="keyword">if</span> (w[i - <span class="number">1</span>] &lt;= wt)</span><br><span class="line">            K[i][wt] = <span class="built_in">max</span>(v[i - <span class="number">1</span>] + K[i - <span class="number">1</span>][wt - w[i - <span class="number">1</span>]], K[i - <span class="number">1</span>][wt]);</span><br><span class="line">         <span class="keyword">else</span></span><br><span class="line">        K[i][wt] = K[i - <span class="number">1</span>][wt];</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> K[n][W];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   cout &lt;&lt; <span class="string">&quot;Enter the number of items in a Knapsack:&quot;</span>;</span><br><span class="line">   <span class="keyword">int</span> n, W;</span><br><span class="line">   cin &gt;&gt; n;</span><br><span class="line">   <span class="keyword">int</span> v[n], w[n];</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">      cout &lt;&lt; <span class="string">&quot;Enter value and weight for item &quot;</span> &lt;&lt; i &lt;&lt; <span class="string">&quot;:&quot;</span>;</span><br><span class="line">      cin &gt;&gt; v[i];</span><br><span class="line">      cin &gt;&gt; w[i];</span><br><span class="line">   &#125;</span><br><span class="line">   cout &lt;&lt; <span class="string">&quot;Enter the capacity of knapsack&quot;</span>;</span><br><span class="line">   cin &gt;&gt; W;</span><br><span class="line">   cout &lt;&lt; <span class="built_in">knapSack</span>(W, w, v, n);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="后记">后记</h3>
+<p>有些朋友看到我这一篇可能会觉得很惊讶，因为这一篇和以前的那些风格和领域都完全不同。我大概是上一年6月放弃了参加信息学竞赛的想法，而这个博客开始于9月。上一年6月到现在这段时间里，我的很多想法都发生了翻天覆地的变化。现在我又开始重拾信息学了。目前我自己也觉得自己很可能拿不到奖，但是这也无所谓了。我以后会专门把这些文章标上「信息学」的标签，当然除此之外我也会继续写随笔。</p>
+<h3 id="reference">Reference</h3>
+<p>[1] <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92">动态规划, 维基百科，自由的百科全书</a></p>
+<p>[2] <a target="_blank" rel="noopener" href="https://blog.csdn.net/u013309870/article/details/75193592">算法-动态规划 Dynamic Programming--从菜鸟到老鸟, CSDN</a></p>
+<p>[3] <a target="_blank" rel="noopener" href="https://www.tutorialspoint.com/cplusplus-program-to-solve-knapsack-problem-using-dynamic-programming">C++ Program to Solve Knapsack Problem Using Dynamic Programming</a></p>
+<p>问题描述及图片演示来源于<a target="_blank" rel="noopener" href="https://www.jisuanke.com/">计蒜客</a>，在此感谢。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AD%A6/" rel="tag"># 信息学</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/02/20/awe-and-mysticism/" rel="prev" title="敬畏与神秘主义">
+                  <i class="fa fa-chevron-left"></i> 敬畏与神秘主义
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/03/04/relative-and-absolute/" rel="next" title="相对与绝对">
+                  相对与绝对 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Richard Zheng</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
