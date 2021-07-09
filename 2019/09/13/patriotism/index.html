@@ -1,329 +1,110 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
-  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
-
-<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+<meta name="generator" content="Hexo 5.4.0">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-<script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '7.4.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
-  };
-</script>
 
-  <meta name="description" content="我在上小学的时候，有一天看到新闻中关于战争的消息，顿时突发奇想：人们为什么要打仗呢？是因为自己国家的利益。那么，如果我们全人类能联合起来，不就没有战争了吗？于是我推导出一个结论：从全人类的利益的角度出发，爱国是不对的，真正要呼吁和鼓励的应该是团结。记得当时我还写了篇小文章出来表达这一观点，我爸看了以后哈哈大笑。可惜现在已经找不到那篇文章了。时隔多年，从我现在的认知来看，这样想当然是不对的。不过，一">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"richard-zheng.github.io","root":"/","images":"/images","scheme":"Mist","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="我在上小学的时候，有一天看到新闻中关于战争的消息，顿时突发奇想：人们为什么要打仗呢？是因为自己国家的利益。那么，如果我们全人类能联合起来，不就没有战争了吗？于是我推导出一个结论：从全人类的利益的角度出发，爱国是不对的，真正要呼吁和鼓励的应该是团结。记得当时我还写了篇小文章出来表达这一观点，我爸看了以后哈哈大笑。可惜现在已经找不到那篇文章了。时隔多年，从我现在的认知来看，这样想当然是不对的。不过，一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="论爱国">
 <meta property="og:url" content="https://richard-zheng.github.io/2019/09/13/patriotism/index.html">
 <meta property="og:site_name" content="湖面">
 <meta property="og:description" content="我在上小学的时候，有一天看到新闻中关于战争的消息，顿时突发奇想：人们为什么要打仗呢？是因为自己国家的利益。那么，如果我们全人类能联合起来，不就没有战争了吗？于是我推导出一个结论：从全人类的利益的角度出发，爱国是不对的，真正要呼吁和鼓励的应该是团结。记得当时我还写了篇小文章出来表达这一观点，我爸看了以后哈哈大笑。可惜现在已经找不到那篇文章了。时隔多年，从我现在的认知来看，这样想当然是不对的。不过，一">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-13T09:22:07.275Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-09-13T09:20:28.000Z">
+<meta property="article:modified_time" content="2019-09-13T09:20:28.000Z">
+<meta property="article:author" content="Richard Zheng">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="论爱国">
-<meta name="twitter:description" content="我在上小学的时候，有一天看到新闻中关于战争的消息，顿时突发奇想：人们为什么要打仗呢？是因为自己国家的利益。那么，如果我们全人类能联合起来，不就没有战争了吗？于是我推导出一个结论：从全人类的利益的角度出发，爱国是不对的，真正要呼吁和鼓励的应该是团结。记得当时我还写了篇小文章出来表达这一观点，我爸看了以后哈哈大笑。可惜现在已经找不到那篇文章了。时隔多年，从我现在的认知来看，这样想当然是不对的。不过，一">
-  <link rel="canonical" href="https://richard-zheng.github.io/2019/09/13/patriotism/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
-  };
-</script>
+<link rel="canonical" href="https://richard-zheng.github.io/2019/09/13/patriotism/">
 
-  <title>论爱国 | 湖面</title>
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://richard-zheng.github.io/2019/09/13/patriotism/","path":"2019/09/13/patriotism/","title":"论爱国"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>论爱国 | 湖面</title>
   
-
-
-
-
 
 
 
 
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">湖面</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">湖面</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
+
 
 
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-      
-      
-      
-        
-        <li class="menu-item menu-item-home">
-      
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-about">
-      
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-archives">
-      
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
-
-  </li>
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
   </ul>
-
 </nav>
+
+
+
+
 </div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-  <div class="reading-progress-bar"></div>
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-            
-
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-      <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="https://richard-zheng.github.io/2019/09/13/patriotism/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Richard Zheng">
-      <meta itemprop="description" content="人生天地间，忽如远行客。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="湖面">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">论爱国
-
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-13 17:20:28 / 修改时间：17:22:07" itemprop="dateCreated datePublished" datetime="2019-09-13T17:20:28+08:00">2019-09-13</time>
-            </span>
-          
-            
-
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p>我在上小学的时候，有一天看到新闻中关于战争的消息，顿时突发奇想：人们为什么要打仗呢？是因为自己国家的利益。那么，如果我们全人类能联合起来，不就没有战争了吗？于是我推导出一个结论：从全人类的利益的角度出发，爱国是不对的，真正要呼吁和鼓励的应该是团结。记得当时我还写了篇小文章出来表达这一观点，我爸看了以后哈哈大笑。可惜现在已经找不到那篇文章了。时隔多年，从我现在的认知来看，这样想当然是不对的。不过，一个人的某种思维方式，从他的小时候就能看出一点端倪。</p><a id="more"></a>
-<p>这个世界上为什么会存在国家？国家的出现要追溯到一万年以前，人类文明早期，随着贸易的发展，一些商业聚集点出现，这些聚集点逐渐发展为城邦，最后形成国家。从此，国家与国家之间的冲突就出现了。冲突到了一种极端的情况，就是战争。那么，这样一种冲突是好是坏呢？也许没有那么绝对。冲突在很大程度上是一种优胜劣汰，它促进人类文明的发展。举例来说，之前苏联要和美国竞争，都搞航天技术和核技术。但是，一方研究出来了也绝不会把科技成果传授给另一方。从我小学时的那种观点来看，这样肯定是不好的。但是实际上一个东西，你跟别人学然后学会了，和你自己研究出来是完全不一样的。授人以鱼不如授人以渔，就是这个道理。再比如现在我们中国的华为被美国封杀，这样看对于华为当然不是一件好事。但是换个角度，站在全人类的立场想，这样做会不会更激励华为研发自己的技术，不再受制于人甚至比国外的技术领先许多呢？所以说，冲突不一定都是坏的。但是好与坏的界限在哪里？我认为在于是否理性。例如，很明显，发动战争是一种不理性的行为。</p>
-<p>华为最近发布了自主研发的操作系统：鸿蒙OS。刚发布不久，网上有人开始质疑华为迟迟不公布具体的技术文档。新发布的荣耀智慧屏虽然声称搭载鸿蒙OS，但是也处处有Android的影子。下面有不少人评论。有一些有操作系统知识的人的讨论，但是更多的是骂楼主不爱国，所谓「跪舔美国」。有些人甚至说这事华为给美国施障眼法，却没有任何证据，那就只能算是自己臆想出来的了。但我认为，对华为提出批评并不是一种不爱国的行为，恰恰相反，这正是因为希望华为能够发展地更好而提出的要求。由此来看，我们在爱国的同时也要保持自己的理智。很早之前我们就听说过一句口号「不买xx不爱国」。这也是在爱国的情绪的影响下失去理智的例子。有些国产品牌确实做的质量很差，但是仍然有人去买，其中有这种原因。对此我想说的是：如果我们不加分辨地选择国产产品，那么有些厂商可能就会因此不加上进，不去想着研发更好的产品，而是宣传「不买xx不爱国」了——就算产品做的再烂，也不愁没人买。这当然是我们不想看到的情况。</p>
-
-    </div>
-
-    
-    
-    
         
-      
-
-      <footer class="post-footer">
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/2019/09/07/WriteOnSep1st/" rel="next" title="写在9月1日">
-                  <i class="fa fa-chevron-left"></i> 写在9月1日
-                </a>
-              
-            </div>
-
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/09/30/limitation/" rel="prev" title="人的局限性">
-                  人的局限性 <i class="fa fa-chevron-right"></i>
-                </a>
-              
-            </div>
-          </div>
-        
-      </footer>
-    
-  </div>
   
-  
-  
-  </article>
-
-  </div>
-
-
-          </div>
-          
-
-        </div>
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
-    <div class="sidebar-inner">
-        
-        
-        
-        
-      
 
-      <ul class="sidebar-nav motion-element">
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
         </li>
@@ -332,133 +113,181 @@
         </li>
       </ul>
 
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
 
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Richard Zheng</p>
   <div class="site-description" itemprop="description">人生天地间，忽如远行客。</div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/archives/">
         
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
-        
       </div>
-    
   </nav>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="mailto:yuqiu36@live.com" title="E-Mail &rarr; mailto:yuqiu36@live.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-      </span>
-    
-  </div>
+</div>
 
 
 
+          </div>
+        </div>
       </div>
-
     </div>
   </aside>
-  <div id="sidebar-dimmer"></div>
+  <div class="sidebar-dimmer"></div>
 
 
-      </div>
-    </main>
+    </header>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://richard-zheng.github.io/2019/09/13/patriotism/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Richard Zheng">
+      <meta itemprop="description" content="人生天地间，忽如远行客。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="湖面">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          论爱国
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-09-13 17:20:28" itemprop="dateCreated datePublished" datetime="2019-09-13T17:20:28+08:00">2019-09-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>我在上小学的时候，有一天看到新闻中关于战争的消息，顿时突发奇想：人们为什么要打仗呢？是因为自己国家的利益。那么，如果我们全人类能联合起来，不就没有战争了吗？于是我推导出一个结论：从全人类的利益的角度出发，爱国是不对的，真正要呼吁和鼓励的应该是团结。记得当时我还写了篇小文章出来表达这一观点，我爸看了以后哈哈大笑。可惜现在已经找不到那篇文章了。时隔多年，从我现在的认知来看，这样想当然是不对的。不过，一个人的某种思维方式，从他的小时候就能看出一点端倪。</p>
+<p>这个世界上为什么会存在国家？国家的出现要追溯到一万年以前，人类文明早期，随着贸易的发展，一些商业聚集点出现，这些聚集点逐渐发展为城邦，最后形成国家。从此，国家与国家之间的冲突就出现了。冲突到了一种极端的情况，就是战争。那么，这样一种冲突是好是坏呢？也许没有那么绝对。冲突在很大程度上是一种优胜劣汰，它促进人类文明的发展。举例来说，之前苏联要和美国竞争，都搞航天技术和核技术。但是，一方研究出来了也绝不会把科技成果传授给另一方。从我小学时的那种观点来看，这样肯定是不好的。但是实际上一个东西，你跟别人学然后学会了，和你自己研究出来是完全不一样的。授人以鱼不如授人以渔，就是这个道理。再比如现在我们中国的华为被美国封杀，这样看对于华为当然不是一件好事。但是换个角度，站在全人类的立场想，这样做会不会更激励华为研发自己的技术，不再受制于人甚至比国外的技术领先许多呢？所以说，冲突不一定都是坏的。但是好与坏的界限在哪里？我认为在于是否理性。例如，很明显，发动战争是一种不理性的行为。</p>
+<p>华为最近发布了自主研发的操作系统：鸿蒙OS。刚发布不久，网上有人开始质疑华为迟迟不公布具体的技术文档。新发布的荣耀智慧屏虽然声称搭载鸿蒙OS，但是也处处有Android的影子。下面有不少人评论。有一些有操作系统知识的人的讨论，但是更多的是骂楼主不爱国，所谓「跪舔美国」。有些人甚至说这事华为给美国施障眼法，却没有任何证据，那就只能算是自己臆想出来的了。但我认为，对华为提出批评并不是一种不爱国的行为，恰恰相反，这正是因为希望华为能够发展地更好而提出的要求。由此来看，我们在爱国的同时也要保持自己的理智。很早之前我们就听说过一句口号「不买xx不爱国」。这也是在爱国的情绪的影响下失去理智的例子。有些国产品牌确实做的质量很差，但是仍然有人去买，其中有这种原因。对此我想说的是：如果我们不加分辨地选择国产产品，那么有些厂商可能就会因此不加上进，不去想着研发更好的产品，而是宣传「不买xx不爱国」了——就算产品做的再烂，也不愁没人买。这当然是我们不想看到的情况。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/09/07/WriteOnSep1st/" rel="prev" title="写在9月1日">
+                  <i class="fa fa-chevron-left"></i> 写在9月1日
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/09/30/limitation/" rel="next" title="人的局限性">
+                  人的局限性 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Richard Zheng</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.0</div>
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
 
+    </div>
+  </footer>
+
   
-
-
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
-<script src="/js/schemes/pisces.js?v=7.4.0"></script>
-<script src="/js/next-boot.js?v=7.4.0"></script>
-
-
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 
 
 
 
   
 
-  
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
-  
 
-  
 
 </body>
 </html>

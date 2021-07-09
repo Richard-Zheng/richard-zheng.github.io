@@ -1,249 +1,209 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
-  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
-
-<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+<meta name="generator" content="Hexo 5.4.0">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-<script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '7.4.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
-  };
-</script>
 
-  <meta name="description" content="最近冠状病毒疫情爆发，「谣言」这个词也随之被人常常提起。什么是谣言？谣言是怎么产生的？它对我们会有怎样的影响？我们又应该持怎样的态度看待它？下面将具体论述这几个问题。「谣言」是从何而来的？我们首先需要对其追根溯源。它是这样产生的：一个人目睹某个现象后向其他人叙述。然而目睹的基本都是事实，所以我们需要稍微修改一下：谣言应该是一个人出于某种动机向别人叙述某些信息。有些人可能会反驳：难道谣言的定义和真实">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"richard-zheng.github.io","root":"/","images":"/images","scheme":"Mist","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="最近冠状病毒疫情爆发，「谣言」这个词也随之被人常常提起。什么是谣言？谣言是怎么产生的？它对我们会有怎样的影响？我们又应该持怎样的态度看待它？下面将具体论述这几个问题。 「谣言」是从何而来的？我们首先需要对其追根溯源。它是这样产生的：一个人目睹某个现象后向其他人叙述。然而目睹的基本都是事实，所以我们需要稍微修改一下：谣言应该是一个人出于某种动机向别人叙述某些信息。有些人可能会反驳：难道谣言的定义和真">
 <meta property="og:type" content="article">
 <meta property="og:title" content="论谣言">
 <meta property="og:url" content="https://richard-zheng.github.io/2020/02/07/the-rumour/index.html">
 <meta property="og:site_name" content="湖面">
-<meta property="og:description" content="最近冠状病毒疫情爆发，「谣言」这个词也随之被人常常提起。什么是谣言？谣言是怎么产生的？它对我们会有怎样的影响？我们又应该持怎样的态度看待它？下面将具体论述这几个问题。「谣言」是从何而来的？我们首先需要对其追根溯源。它是这样产生的：一个人目睹某个现象后向其他人叙述。然而目睹的基本都是事实，所以我们需要稍微修改一下：谣言应该是一个人出于某种动机向别人叙述某些信息。有些人可能会反驳：难道谣言的定义和真实">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-07T14:31:42.114Z">
+<meta property="og:description" content="最近冠状病毒疫情爆发，「谣言」这个词也随之被人常常提起。什么是谣言？谣言是怎么产生的？它对我们会有怎样的影响？我们又应该持怎样的态度看待它？下面将具体论述这几个问题。 「谣言」是从何而来的？我们首先需要对其追根溯源。它是这样产生的：一个人目睹某个现象后向其他人叙述。然而目睹的基本都是事实，所以我们需要稍微修改一下：谣言应该是一个人出于某种动机向别人叙述某些信息。有些人可能会反驳：难道谣言的定义和真">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-07T14:26:14.000Z">
+<meta property="article:modified_time" content="2020-02-07T14:26:14.000Z">
+<meta property="article:author" content="Richard Zheng">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="论谣言">
-<meta name="twitter:description" content="最近冠状病毒疫情爆发，「谣言」这个词也随之被人常常提起。什么是谣言？谣言是怎么产生的？它对我们会有怎样的影响？我们又应该持怎样的态度看待它？下面将具体论述这几个问题。「谣言」是从何而来的？我们首先需要对其追根溯源。它是这样产生的：一个人目睹某个现象后向其他人叙述。然而目睹的基本都是事实，所以我们需要稍微修改一下：谣言应该是一个人出于某种动机向别人叙述某些信息。有些人可能会反驳：难道谣言的定义和真实">
-  <link rel="canonical" href="https://richard-zheng.github.io/2020/02/07/the-rumour/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
-  };
-</script>
+<link rel="canonical" href="https://richard-zheng.github.io/2020/02/07/the-rumour/">
 
-  <title>论谣言 | 湖面</title>
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://richard-zheng.github.io/2020/02/07/the-rumour/","path":"2020/02/07/the-rumour/","title":"论谣言"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>论谣言 | 湖面</title>
   
-
-
-
-
 
 
 
 
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">湖面</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">湖面</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
+
 
 
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-      
-      
-      
-        
-        <li class="menu-item menu-item-home">
-      
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-about">
-      
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-archives">
-      
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
-
-  </li>
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
   </ul>
-
 </nav>
+
+
+
+
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Richard Zheng</p>
+  <div class="site-description" itemprop="description">人生天地间，忽如远行客。</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button" aria-label="返回顶部">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
-  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-            
+    <div class="main-inner post posts-expand">
 
-          <div id="content" class="content">
-            
 
-  <div id="posts" class="posts-expand">
-      <article itemscope itemtype="http://schema.org/Article">
+  
+
+
+<div class="post-block">
   
   
-  
-  <div class="post-block post">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://richard-zheng.github.io/2020/02/07/the-rumour/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Richard Zheng">
       <meta itemprop="description" content="人生天地间，忽如远行客。">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="湖面">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">论谣言
-
-          
+        <h1 class="post-title" itemprop="name headline">
+          论谣言
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
+      <time title="创建时间：2020-02-07 22:26:14" itemprop="dateCreated datePublished" datetime="2020-02-07T22:26:14+08:00">2020-02-07</time>
+    </span>
 
-              <time title="创建时间：2020-02-07 22:26:14 / 修改时间：22:31:42" itemprop="dateCreated datePublished" datetime="2020-02-07T22:26:14+08:00">2020-02-07</time>
-            </span>
-          
-            
-
-            
-          
-
-          
+  
+</div>
 
         </div>
       </header>
@@ -252,16 +212,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-        <p>最近冠状病毒疫情爆发，「谣言」这个词也随之被人常常提起。什么是谣言？谣言是怎么产生的？它对我们会有怎样的影响？我们又应该持怎样的态度看待它？下面将具体论述这几个问题。</p><p>「谣言」是从何而来的？我们首先需要对其追根溯源。它是这样产生的：一个人目睹某个现象后向其他人叙述。然而目睹的基本都是事实，所以我们需要稍微修改一下：谣言应该是一个人出于某种动机向别人叙述某些信息。有些人可能会反驳：难道谣言的定义和真实性没有关系吗？实际上，真实性源自于说谣言者的动机。在现实中，绝对的真实是不存在的，它只存在于我们抽象的逻辑中。如果一位路人告诉你地铁站在第二个路口左转后200米处，这自然可以被我们认定为真实的。我们只要按照他说的走一遍，看看最后有没有走到地铁站就可以了。但一只蚂蚁多半不会这样想——200米的精度对于它来说太低了。很自然地就可以看出来，我们的真实实际上是一种近似——一种能够满足我们的动机或需求的近似。</p><a id="more"></a>
-
+        <p>最近冠状病毒疫情爆发，「谣言」这个词也随之被人常常提起。什么是谣言？谣言是怎么产生的？它对我们会有怎样的影响？我们又应该持怎样的态度看待它？下面将具体论述这几个问题。</p>
+<p>「谣言」是从何而来的？我们首先需要对其追根溯源。它是这样产生的：一个人目睹某个现象后向其他人叙述。然而目睹的基本都是事实，所以我们需要稍微修改一下：谣言应该是一个人出于某种动机向别人叙述某些信息。有些人可能会反驳：难道谣言的定义和真实性没有关系吗？实际上，真实性源自于说谣言者的动机。在现实中，绝对的真实是不存在的，它只存在于我们抽象的逻辑中。如果一位路人告诉你地铁站在第二个路口左转后200米处，这自然可以被我们认定为真实的。我们只要按照他说的走一遍，看看最后有没有走到地铁站就可以了。但一只蚂蚁多半不会这样想——200米的精度对于它来说太低了。很自然地就可以看出来，我们的真实实际上是一种近似——一种能够满足我们的动机或需求的近似。</p>
 <p>自然，本文的论证不会到此为止。不过，我们得先给论证找一个落脚点：把某件事情定义成真实的，之后在此基础上展开论证。那件事就是：我们获得了某段信息。这段信息中自然包含它的来源。在我们刚听到谣言时，唯一能够确定真实的事情就是这一件。现在，我们可以开始讨论谣言本身的真实性。这里我们就需要对其进行近似，也就是说，多么接近真实的谣言是可以被认定为真实的。这个近似完全决定于我们自身，满足的自然也是我们自己的需求。进一步来讲，怎么才能确定谣言的真实性？这就需要用到因果关系。如果你能够论证：假定事件A是真的，则必定会造成谣言为真，那么你就可以把「确定谣言是否为真」等效于「确定事件A是否为真」了。这样反向地查找因果关系，直到我们能够确定最末端的那个事件为真（在可以接受的误差范围之内），我们就完成了论证。</p>
 <p>现在，我们确定接受谣言的对象为大众。显然，由于缺乏专业的知识，大众能够储备和解释的因果关系较少。在这时，他们只能求助于谣言的基本特征，比如来源。实际上，在这里大众对谣言真实性的判断中，用到的就是「如果谣言来源于某个地方，则它是可信的」这样最为简单的因果关系。另外的一些基本特征还包括谣言的形式：文字还是截图？又或是现场的视频？当然，这些本质上只不过是相关关系，所以此时判断出的谣言的真实性甚至是可以用概率量化的。但是大众又发现了这些是不可靠的，因此也常常试图用更加有说服力的假设作为因果关系中的因。由于缺乏严谨的思维，这就常常使得对现象的解释从方向上与真实背离了。而人们之所以接受这样的大误差，是因为一种动机——他们急于解释所观察到的现象。</p>
 <p>那么，谣言之于官方又如何呢？官方言论常常出自于科学家等人。他们能够通过切实的实验等研究方法找到更优的因果关系，这种因果关系中的假设是更为合理且贴近真实的。但他们也仅仅能使用因果关系解释。也就是说，他们仅仅能够作出一些假设，并用正确的逻辑推出谣言所包含的那个现象。逻辑是每个人在生活中能够切实体会到的，但是那个假设不一定所有人都能够接受。这也是科学发展的本质。在这种情况下，官方只保证「因」和「果」之间逻辑关系的正确，而不应该保证任何其他事情。</p>
 <p>在最后还想多说几句。本文是在阅读《对本次疫情的结构性反思》一文后有感而发写成的，因此在这里回应一下。因果关系中，本身就包含了「假定那个因是正确的」，而这仅仅是假定而已。我们具体选取哪一个假定，取决于我们固有的认知。但是从某种意义上来说，每一个假定都是平等的。如果把这种假定放大成为必然，则是错误的。</p>
 <p><strong>Related posts:</strong></p>
-<ol>
+<ol type="1">
 <li><a href="https://richard-zheng.github.io/2020/01/21/causal-theory/">因果论</a></li>
 <li><a href="https://richard-zheng.github.io/2019/12/14/movement-and-stillness-and-regularity/">运动、静止与规律</a></li>
 </ol>
@@ -271,202 +229,73 @@
     
     
     
-        
-      
 
-      <footer class="post-footer">
+    <footer class="post-footer">
 
         
 
           <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/2020/02/03/rational-and-emotional/" rel="next" title="理性和感性">
+            <div class="post-nav-item">
+                <a href="/2020/02/03/rational-and-emotional/" rel="prev" title="理性和感性">
                   <i class="fa fa-chevron-left"></i> 理性和感性
                 </a>
-              
             </div>
-
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2020/02/12/rational-neutral-and-objective/" rel="prev" title="理性、中立和客观">
+            <div class="post-nav-item">
+                <a href="/2020/02/12/rational-neutral-and-objective/" rel="next" title="理性、中立和客观">
                   理性、中立和客观 <i class="fa fa-chevron-right"></i>
                 </a>
-              
             </div>
           </div>
-        
-      </footer>
-    
-  </div>
-  
-  
-  
+    </footer>
   </article>
-
-  </div>
-
-
-          </div>
-          
-
-        </div>
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-        
-        
-        
-        
-      
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Richard Zheng</p>
-  <div class="site-description" itemprop="description">人生天地间，忽如远行客。</div>
 </div>
-  <nav class="site-state motion-element">
-      <div class="site-state-item site-state-posts">
-        
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">36</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-    
-      
-      
-      <div class="site-state-item site-state-tags">
-        
-        <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">标签</span>
-        
-      </div>
-    
-  </nav>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="mailto:yuqiu36@live.com" title="E-Mail &rarr; mailto:yuqiu36@live.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-      </span>
-    
-  </div>
 
 
 
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
 
 
-      </div>
-    </main>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Richard Zheng</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.0</div>
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
 
+    </div>
+  </footer>
+
   
-
-
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
-<script src="/js/schemes/pisces.js?v=7.4.0"></script>
-<script src="/js/next-boot.js?v=7.4.0"></script>
-
-
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 
 
 
 
   
 
-  
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
-  
 
-  
 
 </body>
 </html>
