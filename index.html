@@ -127,7 +127,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -162,6 +162,89 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://richard-zheng.github.io/2021/08/21/emacs_note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Richard Zheng">
+      <meta itemprop="description" content="人生天地间，忽如远行客。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="湖面">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/08/21/emacs_note/" class="post-title-link" itemprop="url">Emacs 学习笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-21 17:28:00" itemprop="dateCreated datePublished" datetime="2021-08-21T17:28:00+08:00">2021-08-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>最近有了在终端中SSH远程开发的需求，又想起之前看别人写代码时用Vim或Emacs灵活地在编辑器中定位，羡慕手不离开键盘的效率，于是决定好好学一下Emacs。</p>
+<h2 id="为什么选择emacs">为什么选择Emacs</h2>
+<p>之前由于时不时需要在GNU/Linux里面编辑一些配置（比如配置vps），所以很简单地学了一下Vi的使用方法，但也仅限于会上下左右、会进Insert mode、会按:wq保存退出的水平。但是之前也听说过Emacs，所以我去搜了一下Emacs和Vim的区别和各自的使用场景，大致如下：</p>
+<ul>
+<li>Vim和Emacs的运行环境不同。原版Vim只提供命令行界面（CLI, Command line interface），而Emacs提供GUI和CLI两种。这也侧面体现出不装插件的状态下Vim更像是一个记事本类的编辑器小工具，而Emacs倾向提供一套软件开发的环境。若在命令行下使用Emacs会有小部分功能缺失：部分快捷键被终端占据、浏览器无法显示图片、Emoji支持由终端提供等。</li>
+<li>Vim相对Emacs轻量，内置的功能较少：Emacs内置了文件浏览器、Git客户端、终端甚至一个简单的浏览器。所以使用Emacs写代码很大程度上是“开箱即用”的，最多只需要装一些自动补全相关的插件。而Vim只有基本的编辑功能，所以若不自行安装插件功能性就差一些。</li>
+<li>Vim和Emacs的操作方式不同。Vim使用三种模式，以使用户在大多数时候避免使用组合键。但与此同时在各个模式间切换也增加了时间成本。Emacs则只有编辑模式，组合键的使用非常普遍，使用过程中经常需要按Ctrl/Command键（可以通过按键映射将大小写和Ctrl互换以减轻小指压力）。不过，现在很多人选择使用evil插件来在Emacs中实现Vim的编辑模式，反过来似乎也有。</li>
+<li>Vim的扩展性不如Emacs。Vim的插件采用Vim Script编写，Emacs的插件采用Emacs Lisp编写。Lisp起源于1958年，是当前广泛使用的编程语言中最老的之一。再加上Emacs的GUI提供的自由度，你可以通过安装插件在Emacs中收发邮件、听音乐甚至剪辑视频。而在语言支持相关的插件方面两者都非常完善了。</li>
+</ul>
+<p>看到Emacs有这么多功能，再加上以前对Lisp有所耳闻，最后决定学Emacs。</p>
+<h2 id="学习路线">学习路线</h2>
+<ol type="1">
+<li>看官方Tutorial（有中文翻译版）</li>
+<li>打印Reference Card，时不时看一遍。遇到某个键忘记了就速查。</li>
+<li>尝试逐渐将日常开发切换到Emacs上，逐渐形成肌肉记忆</li>
+</ol>
+<h2 id="一些知识点">一些知识点</h2>
+<p>有些知识点Tutorial没有讲到或者讲了但是我没完全理解，在此记录一下。</p>
+<h3 id="buffer和window">Buffer和Window</h3>
+<p>刚看完tutorial的时候一直没搞清楚buffer和window的关系是什么，后面发现关键是Emacs的一个设计思想：数据与UI解绑。我们通常使用Visual Studio Code这类编辑器的时候都是一个正在编辑的文件（数据）对应一个打开的窗口。但是Emacs不是这样。正在编辑还未保存的文件内容和buffer对应，然后一个frame中显示的区域和window对应。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -928,81 +1011,6 @@ E_{k_{0}}=\dfrac{1}{2}mv_{0}^{2}
 <p>我在看数学压轴题的题解时，常常有这种感觉：看完之后能够从逻辑上认同给出的答案，但是自己做的时候，就又不会了。这是因为没有仔细理解每个步骤的意图，也即「为什么这么做？」。要从题解中很好地理解每个步骤的意图是很复杂的。这也暗示了从「解题思路」到「题解」的转换之间存在着信息的损失。更好的例子是从高级语言到汇编码的转换。对于机器来讲，汇编码是简单的，因为它其中的每一条指令都很具体和底层。可是对于人来说，我们想要理解代码的意思，这时高级语言就更加简洁和清晰了。用高级语言编写的源代码包含一种信息，就是我们构造代码的「理念」：我们想要这段代码在宏观上作出什么事情。而汇编码只会指导机器一步一步地执行具体的操作，而不关心究竟得到了什么。</p>
 <p>汇编码到高级语言的转换常常被人称作「抽象」。在这里我们可以瞥见抽象的一个重要意义：它通过归纳和概括，隐去一些不重要的信息，从而使得「理念」性的信息凸显出来，使人易于理解。事实上，并非完全没有办法把汇编码反编为高级语言。但是得到的结果也往往和原先的代码差别很大，而且和转换前一样难以理解。这与抽象时的「一对多」情况有关。也就是多个版本的源代码可能会编译出同样的汇编码。具体可以看看我写的另一篇文章「排列组合为什么这么难」。与之相同的是，我之前幻想能够把一道数学题的难以理解的代数解法一条一条转换为几何解法。现在看来，这是行不通的。不过这么做也许是思考几何解法的一个好的开始，因为几何图形对我们来说信息量更大，也更丰富。</p>
 <p>在数学和物理中，有很多精妙的抽象大大简化了我们对「理念」的认识过程。而大多数都与「数形结合」有关。平面直角坐标系、向量场、微分方程中的相图......数学之所以让人感到难学，有很大一部分原因是我们对它的认识「不精确」：这个定理描述的是什么？这种解法什么时候起作用？极限是什么意思？图像和其他的直观的理解，正是它们在我们脑海「精确化」的过程。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://richard-zheng.github.io/2020/05/22/why-is-the-permutation-problem-so-difficult/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Richard Zheng">
-      <meta itemprop="description" content="人生天地间，忽如远行客。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="湖面">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/05/22/why-is-the-permutation-problem-so-difficult/" class="post-title-link" itemprop="url">排列组合为什么这么难</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-05-22 23:14:58" itemprop="dateCreated datePublished" datetime="2020-05-22T23:14:58+08:00">2020-05-22</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>自从开学起，我已经与排列组合折腾了好几个月了。在此过程中，我也一直在反复思考、追问一个问题：「排列组合为什么这么难？」然而直到今天，我也只有了一些模糊的思路而已。故记录如下。</p>
-<p>首先，我们先要搞清楚的是「排列组合难在哪里？」我认为最困扰我的一点是：有太多的「做题技巧」，而其中绝大多数的适用范围都是不明确的。也就是说，当看到一个问题时，我会想到很多个可能的解决方法，却又感觉哪一个都不像。</p>
-<p>我现在想试着解释一下，为什么会出现这样的情况。首先我们来看最简单的一道题：有五个数<span class="math inline">\(\begin{Bmatrix} a, b, c, d, e \end{Bmatrix}\)</span>，现在从前三个数（注意必须是前三个数）中同时任意取出两个数，求有多少种可能的情况？如果你学过排列组合或者看过我之前写的《排列组合笔记》，很容易看出答案是<span class="math inline">\(C^{2}_{3}\)</span>，也即「3个里面取2个，不关心顺序」。 <span class="math display">\[
-\begin{aligned}
-C^{2}_{3}&amp;=\dfrac {3!}{2!\left( 3-2\right) !}\\
-&amp;=\dfrac {3\times 2}{2\times 1}\\
-&amp;=3
-\end{aligned}
-\]</span> 但是这里有一点可能会引起你的注意：<span class="math inline">\(C^{2}_{3}\)</span>中的3为什么一定是那前三个数？如果不是，那岂不是不符合题目条件了吗？然而稍微思考一下，又会发现无论是取前三个还是后三个，又或者是中间三个等等，得到的结果都应该是一样的。这又意味着什么呢？我想把这样的现象概括为：「问题空间」和「解空间」的元素，不满足一一对应的关系，而是多对一的关系。「问题空间」代表的自然就是纯粹的题目存在的空间。「解空间」代表的就是<span class="math inline">\(C^{2}_{3}\)</span>，或者简单地说成是3这个数字（显然这两者是等价的，数学运算只是一种等价变换而已）存在的空间。</p>
-<p>这种多对一的关系又意味着什么呢？首先，它包含着一种抽象。实际上，原本的问题与最终的答案<span class="math inline">\(C^{2}_{3}\)</span>比起来，所包含的信息量是降低了，然而<span class="math inline">\(C^{2}_{3}\)</span>与3比起来没有任何差别——我们可以把它们看成表达「3个里面取2个，不关心顺序」的个数的两个记号。我们解题的过程，就是抛弃对最终结果没有影响的信息，从而简化问题，最终映射到已经抽象好的模型的过程。当然，这只是这一道题的情况。有的题目需要你想办法排除妨碍你简化问题的信息，比如定序排列（排列问题，不过需要你让某几个被排列的东西按一定的顺序出现）就需要利用除法把不符合要求的情况排除掉。从排列数公式推出组合数公式就是这种问题。不过很有意思的是，这个基于除法的定序方法同样也是多对一的情况：你不能「保证」你定序的就是题目要求的那几个东西，不过你可以保证的是，无论定序的是哪几个，除数都是一样的。也就是说，「简化问题」本身也可以当作问题去看，并且也有它自己的模型。</p>
-<p>我们当然不是第一次接触这样的抽象了。早在小学的时候，我们就知道无论是苹果的个数、施工天数还是跑步的距离都可以看作<span class="math inline">\(x,y\)</span>等字母，然后列出方程，解出答案。不过这种抽象比较简单，因为这差不多是一种一一对应的关系：把个数、时间、距离等一一替换成<span class="math inline">\(x,y\)</span>等字母是让人觉得可靠的，甚至我们都感觉不到丢失了信息。然而在排列组合问题里情况就复杂得多了：你很难确定哪一些信息不会对结果产生影响。</p>
-<p>以往我在解题的时候，思维都是一条单行线：先看题目有哪些条件，然后逐个考虑解决方法，最后连起来得到解法。但是现在看来，这样做常常是行不通的。我更应该考虑的是「我可以从什么方面简化、抽象问题？」</p>
 
       
     </div>
