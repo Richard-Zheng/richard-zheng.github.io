@@ -20,12 +20,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"richard-zheng.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="学习算法的过程中看题解是很重要的一环，但往往题解只提供一种解法，角度难免片面。因此这里主要以题目为中心，整理我看到的各种解法以及一些个人感想。 前缀和&#x2F;差分（区间转前缀） P1115 最大子段和 这题贪心应该是最直接的方法，也同时可以用前缀和的思想做。 题目要求的是选连续的一段，而且不限制长度，如果我们又枚举起点又枚举长度就会 \(O(n^2)\) . 起点不确定的情况不好控制，我们可以把子段和转">
+<meta name="description" content="学习算法的过程中看题解是很重要的一环，但往往题解只提供一种解法，角度难免片面。因此这里主要以题目为中心，整理我看到的各种解法以及一些个人感想。 P1115 最大子段和 这题贪心应该是最直接的方法，也同时可以用前缀和的思想做。 题目要求的是选连续的一段，而且不限制长度，如果我们又枚举起点又枚举长度就会 \(O(n^2)\) . 起点不确定的情况不好控制，我们可以把子段和转化成：第 \(1\) 到 \">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法学习笔记">
 <meta property="og:url" content="https://richard-zheng.github.io/2021/10/10/algorithm-notes/index.html">
 <meta property="og:site_name" content="湖面">
-<meta property="og:description" content="学习算法的过程中看题解是很重要的一环，但往往题解只提供一种解法，角度难免片面。因此这里主要以题目为中心，整理我看到的各种解法以及一些个人感想。 前缀和&#x2F;差分（区间转前缀） P1115 最大子段和 这题贪心应该是最直接的方法，也同时可以用前缀和的思想做。 题目要求的是选连续的一段，而且不限制长度，如果我们又枚举起点又枚举长度就会 \(O(n^2)\) . 起点不确定的情况不好控制，我们可以把子段和转">
+<meta property="og:description" content="学习算法的过程中看题解是很重要的一环，但往往题解只提供一种解法，角度难免片面。因此这里主要以题目为中心，整理我看到的各种解法以及一些个人感想。 P1115 最大子段和 这题贪心应该是最直接的方法，也同时可以用前缀和的思想做。 题目要求的是选连续的一段，而且不限制长度，如果我们又枚举起点又枚举长度就会 \(O(n^2)\) . 起点不确定的情况不好控制，我们可以把子段和转化成：第 \(1\) 到 \">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-09T23:08:00.000Z">
 <meta property="article:modified_time" content="2021-10-09T23:08:00.000Z">
@@ -117,7 +117,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E5%92%8C%E5%B7%AE%E5%88%86%E5%8C%BA%E9%97%B4%E8%BD%AC%E5%89%8D%E7%BC%80"><span class="nav-number">1.</span> <span class="nav-text">前缀和&#x2F;差分（区间转前缀）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#p1115-%E6%9C%80%E5%A4%A7%E5%AD%90%E6%AE%B5%E5%92%8C"><span class="nav-number">1.1.</span> <span class="nav-text">P1115 最大子段和</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#p1115-%E6%9C%80%E5%A4%A7%E5%AD%90%E6%AE%B5%E5%92%8C"><span class="nav-number">1.</span> <span class="nav-text">P1115 最大子段和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cf1573b-swaps"><span class="nav-number">2.</span> <span class="nav-text">CF1573B Swaps</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -212,12 +212,14 @@
     
     <div class="post-body" itemprop="articleBody">
         <p>学习算法的过程中看题解是很重要的一环，但往往题解只提供一种解法，角度难免片面。因此这里主要以题目为中心，整理我看到的各种解法以及一些个人感想。</p>
-<h2 id="前缀和差分区间转前缀">前缀和/差分（区间转前缀）</h2>
-<h3 id="p1115-最大子段和">P1115 最大子段和</h3>
+<h2 id="p1115-最大子段和">P1115 最大子段和</h2>
 <p>这题贪心应该是最直接的方法，也同时可以用前缀和的思想做。</p>
 <p>题目要求的是选连续的一段，而且不限制长度，如果我们又枚举起点又枚举长度就会 <span class="math inline">\(O(n^2)\)</span> .</p>
 <p>起点不确定的情况不好控制，我们可以把子段和转化成：第 <span class="math inline">\(1\)</span> 到 <span class="math inline">\(x\)</span> 个数之和减去第 <span class="math inline">\(1\)</span> 到 <span class="math inline">\(y\)</span> 个数之和，其中 <span class="math inline">\(x &gt; y\)</span> . 对于每一个 <span class="math inline">\(x\)</span> ，问题就转换成了求最小前缀和。时间复杂度 <span class="math inline">\(O(n)\)</span>.</p>
 <p>贪心就更直接了。设当前以第 <span class="math inline">\(i\)</span> 个数结尾的子段最大和为 <span class="math inline">\(dp[i]\)</span> ，我们可以看出若是 <span class="math inline">\(dp[i - 1] + a[i] &lt; 0\)</span>，我们就还不如不选第 <span class="math inline">\(i\)</span> 个数，直接 <span class="math inline">\(dp[i] = 0\)</span> 即可。其他情况下就必然是 <span class="math inline">\(dp[i] = dp[i - 1] + a[i]\)</span>. 最后找出最大的 <span class="math inline">\(dp[i]\)</span> 就可以了。由于 <span class="math inline">\(dp[i]\)</span> 可以直接由一个变量存储，空间复杂度 <span class="math inline">\(O(1)\)</span>. 时间复杂度 <span class="math inline">\(O(n)\)</span>.</p>
+<h2 id="cf1573b-swaps">CF1573B Swaps</h2>
+<p>这题看起来很复杂，其实就一个关键点：<span class="math inline">\(a\)</span> 都为奇数而 <span class="math inline">\(b\)</span> 都为偶数，因此这两个数组从第一个数开始就不一样。想让 <span class="math inline">\(a\)</span> 字典序小于 <span class="math inline">\(b\)</span> 的话，就需要且仅需要 <span class="math inline">\(a_1&lt;b_1\)</span>. 所以只要找到一对 <span class="math inline">\(a_i\)</span> 和 <span class="math inline">\(b_j\)</span> 满足 <span class="math inline">\(a_i&lt;b_j\)</span> 并一个一个把这两个数分别移到最前面就好了。此时问题就转化为找最小的 <span class="math inline">\(i+j-2\)</span>. （若下标从 <span class="math inline">\(0\)</span> 开始则为最小的 <span class="math inline">\(i+j\)</span>）</p>
+<p>假设我们一定要选某个 <span class="math inline">\(b\)</span> 中的偶数 <span class="math inline">\(b_j\)</span>，此时我们只需要找满足 <span class="math inline">\(a_i&lt;b_j\)</span> 的下标最小的 <span class="math inline">\(a_i\)</span> 即为最优解。因此我们可以这样做：开一个数组 <span class="math inline">\(p\)</span> 记录某个数 <span class="math inline">\(n\)</span> 在数组 <span class="math inline">\(a/b\)</span> 中的位置 <span class="math inline">\(p_n\)</span>. 从大到小遍历所有的数，然后用一个变量 <span class="math inline">\(l\)</span> 记录当前遍历到的 <span class="math inline">\(a\)</span> 中最小的下标，若当前数 <span class="math inline">\(n\)</span> 为奇数则 <span class="math inline">\(l=min(l, p_n)\)</span>，若当前为偶数则更新答案为 <span class="math inline">\(min(answer, p_i + l)\)</span>. （注意这里认为下标从 <span class="math inline">\(0\)</span> 开始）</p>
 
     </div>
 
