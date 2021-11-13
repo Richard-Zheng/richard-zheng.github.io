@@ -22,6 +22,7 @@
   --highlight-foreground: #444;
   --highlight-gutter-background: #dedede;
   --highlight-gutter-foreground: #555;
+  color-scheme: light;
 }
 html {
   line-height: 1.15; /* 1 */
@@ -2069,7 +2070,6 @@ pre code {
 }
 .posts-expand .post-meta-container time {
   border-bottom: 1px dashed #999;
-  cursor: pointer;
 }
 .post-meta {
   display: flex;
@@ -2717,7 +2717,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #f04520;
+  background: #b9ff47;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
