@@ -207,7 +207,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>很多人都说《高等数学》难学，一部分缘于求极限、求导和积分是全新的、之前没有接触过的运算，要掌握和熟练运用需要不少苦功夫；另一部分就要归结于编书者用“惯例”来搪塞各种解释的高傲态度。</p>
-<p>第二章中，先介绍导数，再介绍微分。这导致前面突然就冒出个<span class="math inline">\(\dfrac{d}{dx}\)</span>求导符号。然而介绍微分的时候又草草带过。基本上，书中是这样定义微分运算的：对函数<span class="math inline">\(y=f(x)\)</span>，如果<span class="math inline">\(x_0\)</span>和<span class="math inline">\(x_0+\Delta x\)</span>在定义域内且 <span class="math display">\[
+<p>第二章中，先介绍导数，再介绍微分。这导致前面突然就冒出个<span class="math inline">\(\dfrac{\mathrm{d}}{\mathrm{d}x}\)</span>求导符号。然而介绍微分的时候又草草带过。基本上，书中是这样定义微分运算的：对函数<span class="math inline">\(y=f(x)\)</span>，如果<span class="math inline">\(x_0\)</span>和<span class="math inline">\(x_0+\Delta x\)</span>在定义域内且 <span class="math display">\[
 \Delta y=f&#39;\left( x\right) \Delta x+o\left( \Delta x\right)
 \]</span> 那么记作 <span class="math display">\[
 \mathrm{d}y=A\Delta x.
@@ -216,7 +216,7 @@
 \]</span> 嗯？这就结束了？</p>
 <p>所以微分是什么呢？难道跟我们学的加减乘除一样，就是一个运算符号？</p>
 <p>是，也不完全是。</p>
-<p>回想书中前面的内容，我们一直把求导符号<span class="math inline">\(\dfrac{d}{dx}\)</span>称为“算子”。其实这个概念在第一章第一节早有介绍，只不过大部分人都会忽略：</p>
+<p>回想书中前面的内容，我们一直把求导符号<span class="math inline">\(\dfrac{\mathrm{d}}{\mathrm{d}x}\)</span>称为“算子”。其实这个概念在第一章第一节早有介绍，只不过大部分人都会忽略：</p>
 <blockquote>
 <p>映射又称为<strong>算子</strong>。根据集合<span class="math inline">\(X\)</span>、<span class="math inline">\(Y\)</span>的不同情形，在不同的数学分支中，映射又有不同的惯用名称。例如，从非空集<span class="math inline">\(X\)</span>到数集<span class="math inline">\(Y\)</span>的映射又称为<span class="math inline">\(X\)</span>上的<strong>泛函</strong>，从非空集<span class="math inline">\(X\)</span>到它自身的映射又称为<span class="math inline">\(X\)</span>上的<strong>变换</strong>，从实数集（或其子集）<span class="math inline">\(X\)</span>到实数集<span class="math inline">\(Y\)</span>的映射通常定义为<span class="math inline">\(X\)</span>上的<strong>函数</strong>。</p>
 </blockquote>
@@ -224,18 +224,34 @@
 y=x^2\\
 \mathrm{d}y=2x\mathrm{d}x
 \]</span> 是函数映射成函数吗？看着不像啊！这怎么又有<span class="math inline">\(x\)</span>又有<span class="math inline">\(\mathrm{d}x\)</span>，难道是二元函数？</p>
-<p>你可以这么理解，但是我认为一个（在数学上是等价的）更好的理解是：对于每一个<span class="math inline">\(x\)</span>，都有一个对应的函数<span class="math inline">\(g(\mathrm{d}x)=2x\mathrm{d}x\)</span>. 这个函数是<span class="math inline">\(y\)</span>在<span class="math inline">\(x\)</span>附近的线性近似。这就是微分的运算结果。</p>
-<p>到这里，有必要解释一下为啥书里面不先介绍微分了。这其实是个历史遗留问题。微分的符号<span class="math inline">\(\mathrm{d}\)</span>最早是莱布尼茨发明的（顺便一提，积分符号也是他发明的），他把<span class="math inline">\(\Delta x\)</span>和<span class="math inline">\(\Delta y\)</span>当成是有限的增量，对应的<span class="math inline">\(\mathrm{d}x\)</span>和<span class="math inline">\(\mathrm{d}y\)</span>就是无穷小增量。然而麻烦的是，莱布尼茨对于无穷小和微分的定义是很不精确的（具体可以参考<a target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/21199/is-frac-textrmdy-textrmdx-not-a-ratio">这里的回答</a>），所以我们现在学习的<strong>并不是他的理论</strong>。然而我们要学他的符号，因为这已经是“惯例”了。我们学习的是 <span class="math display">\[
-\dfrac{d}{dx}(y)=\lim _{\Delta x\to 0}{\frac {\Delta y}{\Delta x}}
-\]</span> 其中<span class="math inline">\(\dfrac{d}{dx}\)</span>​就是一个写得比较奇怪的记号。那么你可能会问：先讲微分，不就没这么多破事了吗？不好意思，不行。因为我们现在采用的是柯西给出的微积分定义。他是用导数定义微分的： <span class="math display">\[
+<p>你可以这么理解，但是我认为一个（在数学上是等价的）更好的理解是：对于每一个<span class="math inline">\(x\)</span>，都有一个对应的函数<span class="math inline">\(g(\mathrm{d}x)=2x\mathrm{d}x\)</span>. 这个函数是<span class="math inline">\(y\)</span>在<span class="math inline">\(x\)</span>附近的<strong>线性近似</strong>。微分就是把一个函数映射到这样一个实数到函数的映射（若嫌麻烦也可以理解成二元函数）上面。</p>
+<p>到这里，有必要解释一下为啥书里面不先介绍微分了。这其实是个历史遗留问题。微分的符号<span class="math inline">\(\mathrm{d}\)</span>最早是莱布尼茨发明的（顺便一提，积分符号也是他发明的），他把<span class="math inline">\(\Delta x\)</span>和<span class="math inline">\(\Delta y\)</span>当成是有限的增量，对应的<span class="math inline">\(\mathrm{d}x\)</span>和<span class="math inline">\(\mathrm{d}y\)</span>就是无穷小增量。然而麻烦的是，莱布尼茨对于无穷小和微分的定义是很不精确的（莱布尼茨发明微积分的时候还没有极限的严格定义，具体可以参考<a target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/21199/is-frac-textrmdy-textrmdx-not-a-ratio">这里的回答</a>），所以我们现在学习的<strong>并不是他的理论</strong>。然而我们要学他的符号，因为这已经是“惯例”了。我们学习的是 <span class="math display">\[
+\dfrac{\mathrm{d}}{\mathrm{d}x}y=\lim _{\Delta x\to 0}{\frac {\Delta y}{\Delta x}}
+\]</span> 其中<span class="math inline">\(\dfrac{\mathrm{d}}{\mathrm{d}x}\)</span>就是一个写得比较奇怪的记号。那么你可能会问：先讲微分，不就没这么多破事了吗？不好意思，不行。因为我们现在采用的是柯西给出的微积分定义（极限的严格定义也是柯西给出的）。他是用导数定义微分的： <span class="math display">\[
 \mathrm{d}y=f&#39;(x)\mathrm{d}x.
 \]</span> 这下死循环了。所以编书者没办法，就这么将就学吧。</p>
 <p>有人会问：不是说牛顿和莱布尼茨同时发明了微积分吗？牛顿的符号为啥没流传下来呢？其实现在也在用，就是<span class="math inline">\(\dot {y}\)</span>，表示<span class="math inline">\(y\)</span>的一阶导数，二阶就是加两个点，三阶就是加三个点，以此类推。但是这样写并没有显式地指明自变量是什么，容易造成误解。</p>
-<p>莱布尼茨符号流行的另外一个原因是它们允许人们轻松地回忆起用于微分和积分的适当公式。比如链式法则：假设函数<span class="math inline">\(g\)</span>在<span class="math inline">\(x\)</span>处可微，<span class="math inline">\(y = f(u)\)</span>在<span class="math inline">\(u = g(x)\)</span>处可微。那么复合函数<span class="math inline">\(y = f(g(x))\)</span>在<span class="math inline">\(x\)</span>处是可微的，其导数用莱布尼茨符号表示为： <span class="math display">\[
-\frac {dy}{dx}=\frac {dy}{du}\cdot \frac {du}{dx}
+<p>莱布尼茨符号流行的另外一个原因是它能辅助记忆用于微分和积分的公式。比如链式法则：假设函数<span class="math inline">\(g\)</span>在<span class="math inline">\(x\)</span>处可微，<span class="math inline">\(y = f(u)\)</span>在<span class="math inline">\(u = g(x)\)</span>处可微。那么复合函数<span class="math inline">\(y = f(g(x))\)</span>在<span class="math inline">\(x\)</span>处是可微的，其导数用莱布尼茨符号表示为： <span class="math display">\[
+\dfrac{\mathrm{d}y}{\mathrm{d}x}=\dfrac{\mathrm{d}y}{\mathrm{d}u}\cdot \dfrac{\mathrm{d}u}{\mathrm{d}x}
 \]</span> 把<span class="math inline">\(\mathrm{d}u\)</span>消……等等！谁告诉你能这么消的？ <span class="math display">\[
-\frac {dy}{dx}=\lim _{\Delta u\to 0}{\frac {\Delta y}{\Delta u}} \cdot \lim _{\Delta x\to 0}{\frac {\Delta u}{\Delta x}}
+\dfrac{\mathrm{d}y}{\mathrm{d}x}=\lim _{\Delta u\to 0}{\frac {\Delta y}{\Delta u}} \cdot \lim _{\Delta x\to 0}{\frac {\Delta u}{\Delta x}}
 \]</span> 用极限形式写出来。显然，这两个极限的变量都不一样，不可以消去。</p>
+<p>如果要证明链式法则，我们可以利用微分的概念。 <span class="math display">\[
+\begin{align}
+\Delta y&amp;=f&#39;(u)\Delta u+o(\Delta u)\\
+&amp;=f&#39;(u)\left[g&#39;(x)\Delta x+o(\Delta x)\right]+o(\Delta u)\\
+&amp;=f&#39;(u)g&#39;(x)\Delta x+f&#39;(u)\cdot o(\Delta x)+o(\Delta u)
+\end{align}
+\]</span> 所以 <span class="math display">\[
+\mathrm{d}y=f&#39;(u)\mathrm{d}u=f&#39;(u)g&#39;(x)\mathrm{d}x
+\]</span> 书中用导数定义微分，因此复合函数的微分法则就是由链式法则推出。但是个人感觉这样的写法更自然好懂：既然我要的是线性近似，那么自变量<span class="math inline">\(u\)</span>当然也可以被它自己的线性近似替代。</p>
+<p>有了链式法则，我们就有了<strong>微分形式不变性</strong>：对于上面的自变量的微分<span class="math inline">\(\mathrm{d}u\)</span>，我们原先把它看作自变量的增量<span class="math inline">\(\Delta u\)</span>，但是现在我们发现如果<span class="math inline">\(u\)</span>又作为另外一个函数<span class="math inline">\(g\)</span>的因变量，<span class="math inline">\(\mathrm{d}u\)</span>可以直接被替换成它求微分的结果<span class="math inline">\(g&#39;(x)\mathrm{d}x\)</span>.</p>
+<p>现在来说积分。这里直接跳过书上的“记作”论调，重新定义：积分就是微分的<strong>逆运算</strong>。回想起我们对微分的理解：微分就是把一个函数映射到这样一个实数到函数的映射（若嫌麻烦也可以理解成二元函数）上面。那么积分就是微分的<strong>逆映射</strong>。给一个实数到函数的映射（二元函数），就能对应回一个函数上。嗯？等等，微分这个映射并不是单射，不同的函数也可能有相同的微分。那怎么办呢？我们给它打个补丁：由于有相同微分的原函数互相都只相差某个常数，我们就把积分定义成一个实数到函数的映射对应一个函数集合。这个函数集合中的函数互相都只相差某个常数，我们就用<span class="math inline">\(F(x)+C\)</span>来表示这个函数集合。</p>
+<p>从定义立即可以得到，如果在区间<span class="math inline">\(I\)</span>上可导函数<span class="math inline">\(F(x)\)</span>的导函数为<span class="math inline">\(f(x)\)</span>，即对任一<span class="math inline">\(x\in I\)</span>，都有 <span class="math display">\[
+\int \mathrm{d}F(x)=\int f(x)\mathrm{d}x=F(x)+C.
+\]</span> 回到上面的复合函数，如果<span class="math inline">\(f(u)\)</span>具有原函数<span class="math inline">\(F(u)\)</span>，由微分形式不变性，有 <span class="math display">\[
+\int f(g(x))g&#39;(x)\mathrm{d}x=\int f&#39;(u)\mathrm{d}u=F(u)+C
+\]</span> 这就是换元积分法中的<strong>第一类换元法</strong>。</p>
 
       
     </div>
