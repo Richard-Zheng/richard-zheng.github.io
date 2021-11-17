@@ -225,8 +225,10 @@
 <p>映射又称为<strong>算子</strong>。根据集合<span class="math inline">\(X\)</span>、<span class="math inline">\(Y\)</span>的不同情形，在不同的数学分支中，映射又有不同的惯用名称。例如，从非空集<span class="math inline">\(X\)</span>到数集<span class="math inline">\(Y\)</span>的映射又称为<span class="math inline">\(X\)</span>上的<strong>泛函</strong>，从非空集<span class="math inline">\(X\)</span>到它自身的映射又称为<span class="math inline">\(X\)</span>上的<strong>变换</strong>，从实数集（或其子集）<span class="math inline">\(X\)</span>到实数集<span class="math inline">\(Y\)</span>的映射通常定义为<span class="math inline">\(X\)</span>上的<strong>函数</strong>。</p>
 </blockquote>
 <p>那么求导是怎样的一种映射？显然是一个原函数映射成一个导函数。那微分呢？ <span class="math display">\[
-y=x^2\\
-\mathrm{d}y=2x\mathrm{d}x
+\begin{align}
+y&amp;=x^2\\
+\mathrm{d}y&amp;=2x\mathrm{d}x
+\end{align}
 \]</span> 是函数映射成函数吗？看着不像啊！这怎么又有<span class="math inline">\(x\)</span>又有<span class="math inline">\(\mathrm{d}x\)</span>，难道是二元函数？</p>
 <p>你可以这么理解，但是我认为一个（在数学上是等价的）更好的理解是：对于每一个<span class="math inline">\(x\)</span>，都有一个对应的函数<span class="math inline">\(g(\mathrm{d}x)=2x\mathrm{d}x\)</span>. 这个函数是<span class="math inline">\(y\)</span>在<span class="math inline">\(x\)</span>附近的<strong>线性近似</strong>。微分就是把一个函数映射到这样一个实数到函数的映射（若嫌麻烦也可以理解成二元函数）上面。</p>
 <p>到这里，有必要解释一下为啥书里面不先介绍微分了。这其实是个历史遗留问题。微分的符号<span class="math inline">\(\mathrm{d}\)</span>最早是莱布尼茨发明的（顺便一提，积分符号也是他发明的），他把<span class="math inline">\(\Delta x\)</span>和<span class="math inline">\(\Delta y\)</span>当成是有限的增量，对应的<span class="math inline">\(\mathrm{d}x\)</span>和<span class="math inline">\(\mathrm{d}y\)</span>就是无穷小增量。然而麻烦的是，莱布尼茨对于无穷小和微分的定义是很不精确的（莱布尼茨发明微积分的时候还没有极限的严格定义，具体可以参考<a target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/21199/is-frac-textrmdy-textrmdx-not-a-ratio">这里的回答</a>），所以我们现在学习的<strong>并不是他的理论</strong>。然而我们要学他的符号，因为这已经是“惯例”了。我们学习的是 <span class="math display">\[
@@ -248,14 +250,43 @@ y=x^2\\
 \end{align}
 \]</span> 所以 <span class="math display">\[
 \mathrm{d}y=f&#39;(u)\mathrm{d}u=f&#39;(u)g&#39;(x)\mathrm{d}x
-\]</span> 书中用导数定义微分，因此复合函数的微分法则就是由链式法则推出。但是个人感觉这样的写法更自然好懂：既然我要的是线性近似，那么自变量<span class="math inline">\(u\)</span>当然也可以被它自己的线性近似替代。</p>
-<p>有了链式法则，我们就有了<strong>微分形式不变性</strong>：对于上面的自变量的微分<span class="math inline">\(\mathrm{d}u\)</span>，我们原先把它看作自变量的增量<span class="math inline">\(\Delta u\)</span>，但是现在我们发现如果<span class="math inline">\(u\)</span>又作为另外一个函数<span class="math inline">\(g\)</span>的因变量，<span class="math inline">\(\mathrm{d}u\)</span>可以直接被替换成它求微分的结果<span class="math inline">\(g&#39;(x)\mathrm{d}x\)</span>.</p>
-<p>现在来说积分。这里直接跳过书上的“记作”论调，重新定义：积分就是微分的<strong>逆运算</strong>。回想起我们对微分的理解：微分就是把一个函数映射到这样一个实数到函数的映射（若嫌麻烦也可以理解成二元函数）上面。那么积分就是微分的<strong>逆映射</strong>。给一个实数到函数的映射（二元函数），就能对应回一个函数上。嗯？等等，微分这个映射并不是单射，不同的函数也可能有相同的微分。那怎么办呢？我们给它打个补丁：由于有相同微分的原函数互相都只相差某个常数，我们就把积分定义成一个实数到函数的映射对应一个函数集合。这个函数集合中的函数互相都只相差某个常数，我们就用<span class="math inline">\(F(x)+C\)</span>来表示这个函数集合。</p>
+\]</span> 书中用导数定义微分，因此复合函数的微分法则就是由链式法则推出。但是我个人感觉这样的写法更自然好懂：既然我要的是线性近似，那么自变量<span class="math inline">\(u\)</span>当然也可以被它自己的线性近似替代。</p>
+<p>有了链式法则，我们就有了<strong>一阶微分形式不变性</strong>：对于上面的自变量的微分<span class="math inline">\(\mathrm{d}u\)</span>，我们原先把它看作自变量的增量<span class="math inline">\(\Delta u\)</span>，但是现在我们发现如果<span class="math inline">\(u\)</span>又作为另外一个函数<span class="math inline">\(g\)</span>的因变量，<span class="math inline">\(\mathrm{d}u\)</span>可以直接被替换成它求微分的结果<span class="math inline">\(g&#39;(x)\mathrm{d}x\)</span>.</p>
+<p>那既然对谁微分都是一样的形式，岂不是自变量就不重要了？所以<span class="math inline">\(\mathrm{d}\)</span>无论出现在哪里都是一个意思，无论<span class="math inline">\(y\)</span>对应的自变量是<span class="math inline">\(x\)</span>还是<span class="math inline">\(v\)</span>？</p>
+<p>错。我们上面说的微分形式不变性是对于<strong>一阶微分</strong>而言的，对于二阶微分会是什么样的情况呢？</p>
+<p>对于二阶导数，书中是这么写的 <span class="math display">\[
+f&#39;&#39;(x)=\dfrac{\mathrm{d}}{\mathrm{d}x}\left(\dfrac{\mathrm{d}y}{\mathrm{d}x}\right)=\dfrac{\mathrm{d}^2y}{\mathrm{d}x^2}
+\]</span></p>
+<p>看着也挺怪的，我们用微分写 <span class="math display">\[
+\begin{align}
+\mathrm{d}^2y&amp;=\mathrm{d}(\mathrm{d}y)\\
+&amp;=\mathrm{d}(f&#39;(x)\mathrm{d}x)\\
+&amp;=\mathrm{d}(f&#39;(x))\mathrm{d}x+f&#39;(x)\mathrm{d}(\mathrm{d}x)\\
+&amp;=(f&#39;&#39;(x)\mathrm{d}x)\mathrm{d}x+f&#39;(x)\mathrm{d}^2x\\
+&amp;=f&#39;&#39;(x)\mathrm{d}x^2+f&#39;(x)\mathrm{d}^2x
+\end{align}
+\]</span></p>
+<p>好像多了一项<span class="math inline">\(f&#39;(x)\mathrm{d}^2x\)</span>？</p>
+<p>这就是为什么微分形式不变性对于二阶微分不成立！二阶微分不但会受<span class="math inline">\(\mathrm{d}x^{2}\)</span>影响，也会受<span class="math inline">\(\mathrm{d^2}x\)</span>影响。</p>
+<p>我们若是想得到二阶导数的形式，就必须把<span class="math inline">\(x\)</span><strong>看成自变量而不是一个可微的函数</strong>，我们实际上求的是对<span class="math inline">\(\mathrm{d}x\)</span>的偏微分</p>
+<p><span class="math display">\[
+\left(\partial ^ 2 y\right) _ {\mathrm{d}x}=f&#39;&#39;(x)\mathrm{d}x^2
+\]</span></p>
+<p>所以，二阶微分不具有形式不变性。</p>
+<p>现在来说积分。这里直接跳过书上的“记作”论调，重新定义：积分就是微分的<strong>逆运算</strong>。回想起我们对微分的理解：微分就是把一个函数映射到一个“实数到函数的映射”（若嫌麻烦也可以理解成二元函数）上面。那么积分就是微分的<strong>逆映射</strong>。给一个实数到函数的映射（二元函数），就能对应回一个函数上。嗯？等等，微分这个映射并不是单射，不同的函数也可能有相同的微分。那怎么办呢？我们给它打个补丁：由于有相同微分的原函数互相都只相差某个常数，我们就把积分定义成一个实数到函数的映射对应一个函数集合。这个函数集合中的函数互相都只相差某个常数，我们就用<span class="math inline">\(F(x)+C\)</span>来表示这个函数集合。</p>
 <p>从定义立即可以得到，如果在区间<span class="math inline">\(I\)</span>上可导函数<span class="math inline">\(F(x)\)</span>的导函数为<span class="math inline">\(f(x)\)</span>，即对任一<span class="math inline">\(x\in I\)</span>，都有 <span class="math display">\[
 \int \mathrm{d}F(x)=\int f(x)\mathrm{d}x=F(x)+C.
 \]</span> 回到上面的复合函数，如果<span class="math inline">\(f(u)\)</span>具有原函数<span class="math inline">\(F(u)\)</span>，由微分形式不变性，有 <span class="math display">\[
 \int f(g(x))g&#39;(x)\mathrm{d}x=\int f&#39;(u)\mathrm{d}u=F(u)+C
-\]</span> 这就是换元积分法中的<strong>第一类换元法</strong>。</p>
+\]</span> 这就是换元积分法中的<strong>第一类换元法</strong>。其实，这就是对被积表达式部分积分。</p>
+<p><strong>References:</strong></p>
+<ol type="1">
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/li-hua/p/6617366.html">迷之记号 dx 到底是什么鬼</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/30296338/answer/120574352">什么是微分形式不变性？一阶微分形式不变性与链式法则是等价的吗（两者可互推？）？两者有什么区别？ - 马同学的回答</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/26490937">微分符号 dx、dy 表示什么含义？</a></li>
+<li><a target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/21199/is-frac-textrmdy-textrmdx-not-a-ratio">Is <span class="math inline">\(\dfrac{\mathrm{d}}{\mathrm{d}x}\)</span> not a ratio?</a></li>
+<li><a target="_blank" rel="noopener" href="https://math.stackexchange.com/a/3561534/858590">The second differential versus the differential of a differential form</a></li>
+</ol>
 
     </div>
 
