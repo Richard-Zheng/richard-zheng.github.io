@@ -20,12 +20,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"richard-zheng.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="很多人都说《高等数学》难学，一部分缘于求极限、求导和积分是全新的、之前没有接触过的运算，要掌握和熟练运用需要不少苦功夫；另一部分就要归结于编书者用“惯例”来搪塞各种解释的高傲态度。 第二章中，先介绍导数，再介绍微分。这导致前面突然就冒出个\(\dfrac{\mathrm{d}}{\mathrm{d}x}\)求导符号。然而介绍微分的时候又草草带过。基本上，书中是这样定义微分运算的：对函数\(y&#x3D;f(">
+<meta name="description" content="阅读本文前，你需要：  了解极限的定义以及相关的无穷小等概念。 了解导数是什么。 了解极限运算法则和求导法则。 理解“微分是函数的线性近似”  很多人都说《高等数学》难学，一部分缘于求极限、求导和积分是全新的、之前没有接触过的运算，要掌握和熟练运用需要不少苦功夫；另一部分就要归结于编书者用“惯例”来搪塞各种解释的高傲态度。 第二章中，先介绍导数，再介绍微分。这导致前面突然就冒出个\(\dfrac{">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解读高等数学中那些难懂的符号">
 <meta property="og:url" content="https://richard-zheng.github.io/2021/11/13/weird-marks-in-advanced-mathematics/index.html">
 <meta property="og:site_name" content="湖面">
-<meta property="og:description" content="很多人都说《高等数学》难学，一部分缘于求极限、求导和积分是全新的、之前没有接触过的运算，要掌握和熟练运用需要不少苦功夫；另一部分就要归结于编书者用“惯例”来搪塞各种解释的高傲态度。 第二章中，先介绍导数，再介绍微分。这导致前面突然就冒出个\(\dfrac{\mathrm{d}}{\mathrm{d}x}\)求导符号。然而介绍微分的时候又草草带过。基本上，书中是这样定义微分运算的：对函数\(y&#x3D;f(">
+<meta property="og:description" content="阅读本文前，你需要：  了解极限的定义以及相关的无穷小等概念。 了解导数是什么。 了解极限运算法则和求导法则。 理解“微分是函数的线性近似”  很多人都说《高等数学》难学，一部分缘于求极限、求导和积分是全新的、之前没有接触过的运算，要掌握和熟练运用需要不少苦功夫；另一部分就要归结于编书者用“惯例”来搪塞各种解释的高傲态度。 第二章中，先介绍导数，再介绍微分。这导致前面突然就冒出个\(\dfrac{">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-13T02:53:00.000Z">
 <meta property="article:modified_time" content="2021-11-13T02:53:00.000Z">
@@ -129,7 +129,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">48</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -210,7 +210,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>很多人都说《高等数学》难学，一部分缘于求极限、求导和积分是全新的、之前没有接触过的运算，要掌握和熟练运用需要不少苦功夫；另一部分就要归结于编书者用“惯例”来搪塞各种解释的高傲态度。</p>
+        <p>阅读本文前，你需要：</p>
+<ul>
+<li>了解极限的定义以及相关的无穷小等概念。</li>
+<li>了解导数是什么。</li>
+<li>了解极限运算法则和求导法则。</li>
+<li>理解“微分是函数的线性近似”</li>
+</ul>
+<p>很多人都说《高等数学》难学，一部分缘于求极限、求导和积分是全新的、之前没有接触过的运算，要掌握和熟练运用需要不少苦功夫；另一部分就要归结于编书者用“惯例”来搪塞各种解释的高傲态度。</p>
 <p>第二章中，先介绍导数，再介绍微分。这导致前面突然就冒出个<span class="math inline">\(\dfrac{\mathrm{d}}{\mathrm{d}x}\)</span>求导符号。然而介绍微分的时候又草草带过。基本上，书中是这样定义微分运算的：对函数<span class="math inline">\(y=f(x)\)</span>，如果<span class="math inline">\(x_0\)</span>和<span class="math inline">\(x_0+\Delta x\)</span>在定义域内且 <span class="math display">\[
 \Delta y=f&#39;\left( x\right) \Delta x+o\left( \Delta x\right)
 \]</span> 那么记作 <span class="math display">\[
@@ -274,17 +281,31 @@ f&#39;&#39;(x)=\dfrac{\mathrm{d}}{\mathrm{d}x}\left(\dfrac{\mathrm{d}y}{\mathrm{
 \]</span></p>
 <p>所以，二阶微分不具有形式不变性。</p>
 <p>现在来说积分。这里直接跳过书上的“记作”论调，重新定义：积分就是微分的<strong>逆运算</strong>。回想起我们对微分的理解：微分就是把一个函数映射到一个“实数到函数的映射”（若嫌麻烦也可以理解成二元函数）上面。那么积分就是微分的<strong>逆映射</strong>。给一个实数到函数的映射（二元函数），就能对应回一个函数上。嗯？等等，微分这个映射并不是单射，不同的函数也可能有相同的微分。那怎么办呢？我们给它打个补丁：由于有相同微分的原函数互相都只相差某个常数，我们就把积分定义成一个实数到函数的映射对应一个函数集合。这个函数集合中的函数互相都只相差某个常数，我们就用<span class="math inline">\(F(x)+C\)</span>来表示这个函数集合。</p>
-<p>从定义立即可以得到，如果在区间<span class="math inline">\(I\)</span>上可导函数<span class="math inline">\(F(x)\)</span>的导函数为<span class="math inline">\(f(x)\)</span>，即对任一<span class="math inline">\(x\in I\)</span>，都有 <span class="math display">\[
+<p>从定义立即可以得到，如果在区间<span class="math inline">\(I\)</span>上可导函数<span class="math inline">\(F(x)\)</span>的导函数为<span class="math inline">\(f(x)\)</span>，对任一<span class="math inline">\(x\in I\)</span>，都有 <span class="math display">\[
 \int \mathrm{d}F(x)=\int f(x)\mathrm{d}x=F(x)+C.
 \]</span> 回到上面的复合函数，如果<span class="math inline">\(f(u)\)</span>具有原函数<span class="math inline">\(F(u)\)</span>，由微分形式不变性，有 <span class="math display">\[
 \int f(g(x))g&#39;(x)\mathrm{d}x=\int f&#39;(u)\mathrm{d}u=F(u)+C
 \]</span> 这就是换元积分法中的<strong>第一类换元法</strong>。其实，这就是对被积表达式部分积分。</p>
+<p>我们也可以反向操作：</p>
+<p>令<span class="math inline">\(t=\phi ^{-1}(x)\)</span>，则<span class="math inline">\(x=\phi (t)\)</span>，有 <span class="math display">\[
+\int f(x)\mathrm{d}x=\int f(\phi (t))\mathrm{d}\phi (t)=\int f(\phi (t))\phi &#39;(t)\mathrm{d}t
+\]</span> 这就是换元积分法中的<strong>第二类换元法</strong>。</p>
+<p>微分法则能启发我们计算积分，比如：对于在区间<span class="math inline">\(I\)</span>上的可微函数<span class="math inline">\(f(x)\)</span>和<span class="math inline">\(g(x)\)</span>有 <span class="math display">\[
+\begin{aligned}
+\mathrm{d}\left[f(x)g(x)\right]&amp;=f(x)\cdot \mathrm{d}g(x)+\mathrm{d}f(x)\cdot g(x)\\
+&amp;=f(x)g&#39;(x)\mathrm{d}x+f&#39;(x)g(x)\mathrm{d}x
+\end{aligned}
+\]</span> 两边积分得 <span class="math display">\[
+\int \mathrm{d}\left[f(x)g(x)\right]=\int f(x)g&#39;(x)\mathrm{d}x+\int f&#39;(x)g(x)\mathrm{d}x
+\]</span> 即 <span class="math display">\[
+\int f(x)g&#39;(x)\mathrm{d}x=f(x)g(x)-\int f&#39;(x)g(x)\mathrm{d}x
+\]</span> 这就是<strong>分部积分法</strong>。</p>
 <p><strong>References:</strong></p>
 <ol type="1">
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/li-hua/p/6617366.html">迷之记号 dx 到底是什么鬼</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/30296338/answer/120574352">什么是微分形式不变性？一阶微分形式不变性与链式法则是等价的吗（两者可互推？）？两者有什么区别？ - 马同学的回答</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/26490937">微分符号 dx、dy 表示什么含义？</a></li>
-<li><a target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/21199/is-frac-textrmdy-textrmdx-not-a-ratio">Is <span class="math inline">\(\dfrac{\mathrm{d}}{\mathrm{d}x}\)</span> not a ratio?</a></li>
+<li><a target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/21199/is-frac-textrmdy-textrmdx-not-a-ratio">Is d/dx not a ratio?</a></li>
 <li><a target="_blank" rel="noopener" href="https://math.stackexchange.com/a/3561534/858590">The second differential versus the differential of a differential form</a></li>
 </ol>
 
@@ -308,6 +329,9 @@ f&#39;&#39;(x)=\dfrac{\mathrm{d}}{\mathrm{d}x}\left(\dfrac{\mathrm{d}y}{\mathrm{
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2021/11/26/template-for-programming-contest/" rel="next" title="算法竞赛常用模板">
+                  算法竞赛常用模板 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
