@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"richard-zheng.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="本文的标题中强调了“零基础”，但是你仍然需要用到一些常见的开发工具。但请放心，上手使用这些工具并不难！这只需要你有足够的耐心，和一定的信息搜索能力。另外，如果能稍微了解一下原理而不是不求甚解拿来就用，那么维护博客对你来说就更不是件难事。 从这里开始 Hexo 使用 Markdown 作为文章的格式，所以你需要了解 Markdown 标记语言 并选择一个趁手的 Markdown 编辑器。这方面的选择">
+<meta property="og:type" content="article">
+<meta property="og:title" content="零编程基础自建免费博客指南">
+<meta property="og:url" content="https://richard-zheng.github.io/2021/11/29/self-built-free-blog-the-easy-way/index.html">
+<meta property="og:site_name" content="湖面">
+<meta property="og:description" content="本文的标题中强调了“零基础”，但是你仍然需要用到一些常见的开发工具。但请放心，上手使用这些工具并不难！这只需要你有足够的耐心，和一定的信息搜索能力。另外，如果能稍微了解一下原理而不是不求甚解拿来就用，那么维护博客对你来说就更不是件难事。 从这里开始 Hexo 使用 Markdown 作为文章的格式，所以你需要了解 Markdown 标记语言 并选择一个趁手的 Markdown 编辑器。这方面的选择">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-28T20:12:00.000Z">
+<meta property="article:modified_time" content="2021-11-28T20:12:00.000Z">
+<meta property="article:author" content="Richard Zheng">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://richard-zheng.github.io/2021/11/29/self-built-free-blog-the-easy-way/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://richard-zheng.github.io/2021/11/29/self-built-free-blog-the-easy-way/","path":"2021/11/29/self-built-free-blog-the-easy-way/","title":"零编程基础自建免费博客指南"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>零编程基础自建免费博客指南 | 湖面</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">湖面</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B"><span class="nav-number">1.</span> <span class="nav-text">从这里开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C"><span class="nav-number">2.</span> <span class="nav-text">注册</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89"><span class="nav-number">4.</span> <span class="nav-text">自定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E4%BD%9C"><span class="nav-number">5.</span> <span class="nav-text">写作</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Richard Zheng</p>
+  <div class="site-description" itemprop="description">人生天地间，忽如远行客。</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://richard-zheng.github.io/2021/11/29/self-built-free-blog-the-easy-way/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Richard Zheng">
+      <meta itemprop="description" content="人生天地间，忽如远行客。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="湖面">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          零编程基础自建免费博客指南
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-29 04:12:00" itemprop="dateCreated datePublished" datetime="2021-11-29T04:12:00+08:00">2021-11-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本文的标题中强调了“零基础”，但是你仍然需要用到一些常见的开发工具。但请放心，上手使用这些工具并不难！这只需要你有足够的耐心，和一定的信息搜索能力。另外，如果能稍微了解一下原理而不是不求甚解拿来就用，那么维护博客对你来说就更不是件难事。</p>
+<h2 id="从这里开始">从这里开始</h2>
+<p>Hexo 使用 Markdown 作为文章的格式，所以你需要了解 <a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown 标记语言</a> 并选择一个趁手的 Markdown 编辑器。这方面的选择很多，我个人以前一直在用 Typora，但是最近它开始收费了。所以我推荐你用开源的在线 Markdown 编辑器 <a target="_blank" rel="noopener" href="https://markdown.lovejade.cn/?utm_source=markdown.lovejade.cn&amp;pid=about-arya">Arya</a>. 即时预览的界面用起来几乎把学习成本降到了最低。</p>
+<h3 id="原理">原理</h3>
+<p>为什么 Hexo 的运作不需要服务器呢？其实 Hexo 只干了一件事：把编辑器输出的 Markdown 文档（Microsoft Word 虽然也是这一类文件，但是不被 Hexo 支持）转换成 HTML 5 网页（包括 HTML、CSS、JavaScript）。而这些网页从此就算「独立」了：不需要与生成它的那台机器相连接，它自己就能在任何能打开它的浏览器上工作，也不需要在任何服务器上运行代码。所以，我们只需要给这些网页找一个「网盘」（前提是得支持 HTTP 连接），就能通过访问这个网盘打开网页了。</p>
+<p>而是谁运行 Hexo，编译输出网页呢？我们这里用的是 Cloudflare 免费提供的自动构建服务器。你也可以在你自己的计算机上做这个事情，具体操作请看 Hexo 官方文档。</p>
+<h2 id="注册">注册</h2>
+<p>你需要在两个地方注册账号：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/join">GitHub</a>：与 Git 深度集成，用于存放博客源代码库。</li>
+<li><a target="_blank" rel="noopener" href="https://dash.cloudflare.com/sign-up">Cloudflare</a>：用于托管编译出的博客。</li>
+</ul>
+<p>这两者都只需要邮箱注册。另外尽管这次使用 Cloudflare 提供的托管服务，GitHub 同样也有类似的 GitHub Pages，而它提供的域名其中一部分将是你的用户名。加上用户名注册后不可更改，建议你选一个你喜欢的、好记且好输入的用户名。</p>
+<h2 id="配置">配置</h2>
+<p>注册完成之后请打开我预先准备好的 <a target="_blank" rel="noopener" href="https://github.com/Richard-Zheng/hexo-next-starter">模板</a>。然后点击 Use this template，填入你的存储库名称（如 <code>blog-source</code>）然后直接点击 Create repository from template.</p>
+<p>登入 Cloudflare 控制台，点击右边栏的 Pages，然后点击 Create a project. 再下一个页面中点击 Connect GitHub，授权访问你刚刚创建的存储库（或者所有存储库）。再次回到创建 project 的页面，选中你的存储库并下一步。</p>
+<ul>
+<li>在 Project name 中填入你博客的名字（将成为你博客域名中的一部分，所以建议你选一个你喜欢的、好记且好输入的名字）</li>
+<li>在 Build command 中填入 <code>npm run build</code></li>
+<li>在 Build output directory 中填入 <code>public</code></li>
+</ul>
+<p>其他都保持默认，点击 Save and deploy.</p>
+<p>等2到3分钟后，访问 <code>[名字].pages.dev</code>，看看博客是不是已经出现了？</p>
+<h2 id="自定义">自定义</h2>
+<p>Hexo 的配置是用 <a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/yaml-intro.html">YAML 格式</a> 写的。所以简单了解一下它的格式会极大地帮助你修改配置以及减少出错概率。但是目前来说，你只需要记住以下几点：</p>
+<ul>
+<li>数据之间的层级关系是通过缩进来体现的，所以你必须严格遵守缩进，且只能使用空格。</li>
+<li>单个配置值使用冒号结构表示 <code>key: value</code>，注意冒号后有一个空格。</li>
+<li><code>#</code> 开头的为注释</li>
+</ul>
+<p>准备好后打开你刚刚在 GitHub 上创建的博客存储库，点开主目录下的 <code>_config.yml</code> 文件，然后在文件内容上方的右侧找到修改按钮（图标为一支笔）点开。</p>
+<p>这时你就在修改你的 Hexo 配置文件了，这个配置文件的详细说明文档在 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html">此处</a>。但如果你没有额外要求，只用改以下几个部分：</p>
+<ul>
+<li><code>title</code> 网站标题</li>
+<li><code>subtitle</code> 网站副标题（可选）</li>
+<li><code>author</code> 你的名字</li>
+<li><code>url</code> 填入<code>[名字].pages.dev</code></li>
+</ul>
+<p>填好以后直接点击 Commit changes 提交更改。</p>
+<p>可选：然后重复相同的步骤，修改 <code>_config.next.yml</code> 文件，这是主题的配置文件。详细文档在 <a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/getting-started/configuration">此处</a>。你可以参考 <a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/theme-settings/#Choosing-Scheme">文档</a> 挑选一个你喜欢的主题。在大多数情况下，你不需要修改其它的配置。</p>
+<p>修改完以后过2到3分钟再次访问你的博客，看看有什么变化？</p>
+<h2 id="写作">写作</h2>
+<p>你的文章存放在 <code>source/_posts</code> 目录中，修改文章的方式和修改配置基本相同，但是有一点需要注意：每个文章开头都会有这一段：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">date: 2021-01-01 00:00:00 +08:00</span><br><span class="line">tags: [标签1,标签2,标签3]</span><br><span class="line">mathjax: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>这个叫做 YAML front matter，其实就是在 Markdown 文件头部加了一段 YAML 格式的配置/说明。你需要注意的是如果文章中有数学公式需要加上一行 <code>mathjax: true</code>。</p>
+<p>小技巧：Hexo 会使用每篇文章的文件名作为它的 URL，但是中文出现在 URL 中很不美观，你可以把文章英文名作为 Markdown 文件的名字（全部小写，空格换成短横线，如 <code>hello-world</code>），然后在 <code>title: 你好世界</code> 这里写这篇文章的中文名。实际页面中文章的名字全部取决于这个 <code>title</code> 的值。</p>
+<p>如果要新建一篇文章，你可以导航到 <code>source/_posts</code> 目录，然后点击 Add file，选择创建新文件（直接在网页编辑）或是从本地上传 Markdown 文件。</p>
+<p>每次博客存储库有更改，在2到3分钟后网站即会更新。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/11/26/template-for-programming-contest/" rel="prev" title="算法竞赛常用模板">
+                  <i class="fa fa-chevron-left"></i> 算法竞赛常用模板
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/12/01/common-wa-reasons/" rel="next" title="常见 Wrong Answer 原因集锦">
+                  常见 Wrong Answer 原因集锦 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Richard Zheng</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
