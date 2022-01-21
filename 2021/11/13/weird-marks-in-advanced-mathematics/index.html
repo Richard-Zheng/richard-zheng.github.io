@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"richard-zheng.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"richard-zheng.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 <meta name="description" content="微分符号和积分符号 准备工作：  了解极限的定义以及相关的无穷小等概念。 了解导数是什么。 了解极限运算法则和求导法则。 理解“微分是函数的线性近似”  很多人都说《高等数学》难学，一部分缘于求极限、求导和积分是全新的、之前没有接触过的运算，要掌握和熟练运用需要不少苦功夫；另一部分就要归结于编书者用“惯例”来搪塞各种解释的高傲态度。 第二章中，先介绍导数，再介绍微分。这导致前面突然就冒出个\(\d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解读高等数学中那些难懂的符号">
@@ -117,7 +117,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%A7%AF%E5%88%86%E7%AC%A6%E5%8F%B7"><span class="nav-number">1.</span> <span class="nav-text">微分符号和积分符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86%E5%92%8C%E6%B4%9B%E5%BF%85%E8%BE%BE%E6%B3%95%E5%88%99"><span class="nav-number">2.</span> <span class="nav-text">微分中值定理和洛必达法则</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%A7%AF%E5%88%86%E7%AC%A6%E5%8F%B7"><span class="nav-number">1.</span> <span class="nav-text">微分符号和积分符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E9%AD%94%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">积分中的魔法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E7%AD%89%E4%BB%B7%E6%97%A0%E7%A9%B7%E5%B0%8F%E5%88%B0%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">从等价无穷小到泰勒公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%A8%8B"><span class="nav-number">3.1.</span> <span class="nav-text">启程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B2%94%E8%B7%AF"><span class="nav-number">3.2.</span> <span class="nav-text">岔路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%B7%E9%80%94"><span class="nav-number">3.3.</span> <span class="nav-text">迷途</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%88%E7%82%B9"><span class="nav-number">3.4.</span> <span class="nav-text">终点</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -301,7 +301,13 @@ f&#39;&#39;(x)=\dfrac{\mathrm{d}}{\mathrm{d}x}\left(\dfrac{\mathrm{d}y}{\mathrm{
 \int \mathrm{d}\left[f(x)g(x)\right]=\int f(x)g&#39;(x)\mathrm{d}x+\int f&#39;(x)g(x)\mathrm{d}x
 \]</span> 即 <span class="math display">\[
 \int f(x)g&#39;(x)\mathrm{d}x=f(x)g(x)-\int f&#39;(x)g(x)\mathrm{d}x
-\]</span> 这就是<strong>分部积分法</strong>。</p>
+\]</span> 这就是<strong>分部积分法</strong>。也可以写成简洁形式 <span class="math display">\[
+\int u\mathrm{d}v=uv-\int v\mathrm{d}u
+\]</span> 如果你想要理解这些积分法则，这里有一个线索：第一、第二类换元法对应的是复合函数，分部积分法对应的是两个函数的乘积运算。<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1qW411N7FU?p=4">这个视频</a> 也许也能帮助你更直观地理解。</p>
+<p>学积分的时候应该注意思考积分法则的逆运算（逆操作）是什么。如果能明白简单的积分形式是怎么变复杂的，看到复杂的积分也就不难化简了。上面这三种积分法则的逆运算是什么呢？</p>
+<p>很容易发现第一类、第二类换元法是互为逆运算的。而分部积分法的逆运算是它自己 <span class="math display">\[
+\int u\mathrm{d}v=uv-\int v\mathrm{d}u=uv-\left(uv- \int u\mathrm{d}v \right)=\int u\mathrm{d}v
+\]</span></p>
 <p><strong>References:</strong></p>
 <ol type="1">
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/li-hua/p/6617366.html">迷之记号 dx 到底是什么鬼</a></li>
@@ -310,7 +316,37 @@ f&#39;&#39;(x)=\dfrac{\mathrm{d}}{\mathrm{d}x}\left(\dfrac{\mathrm{d}y}{\mathrm{
 <li><a target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/21199/is-frac-textrmdy-textrmdx-not-a-ratio">Is d/dx not a ratio?</a></li>
 <li><a target="_blank" rel="noopener" href="https://math.stackexchange.com/a/3561534/858590">The second differential versus the differential of a differential form</a></li>
 </ol>
-<h2 id="微分中值定理和洛必达法则">微分中值定理和洛必达法则</h2>
+<h2 id="积分中的魔法">积分中的魔法</h2>
+<p>积分有什么用呢？</p>
+<p>要解释积分的用途，我们要提一个很经典的问题：求曲边梯形的面积。也就是说，我们想知道由两条垂直于<span class="math inline">\(x\)</span>轴的直线，一条函数曲线<span class="math inline">\(y = f(x)\)</span>和<span class="math inline">\(x\)</span>轴围成区域的面积。</p>
+<p>首先我们得岔开话题，先讲积分的一个有趣的性质。</p>
+<p>我们学过拉格朗日中值定理（均值定理）：函数<span class="math inline">\(f(x)\)</span>若在<span class="math inline">\([a,b]\)</span>内连续，<span class="math inline">\((a,b)\)</span>内可导，存在<span class="math inline">\(\xi \in (a,b)\)</span>使 <span class="math display">\[
+f(b)-f(a)=f&#39;( \xi )(b-a)
+\]</span> 我们可以尝试把这个定理应用到原函数<span class="math inline">\(F(x)\)</span>上 <span class="math display">\[
+F(b)-F(a)=F&#39;( \xi )(b-a)=f( \xi )(b-a)
+\]</span> 等式右边是什么意思呢？它看着像是长为<span class="math inline">\(f(\xi )\)</span>宽为<span class="math inline">\(b-a\)</span>的长方形的面积。</p>
+<p>微积分的核心思想之一，是把宏观的、难以解决的问题转化为很多局部的、近似的问题。</p>
+<p>我们可以这么写 <span class="math display">\[
+F(x+\Delta x)-F(x)=f( \xi )\Delta x
+\]</span> 等式右边的意思是说，在一个很小的宽为<span class="math inline">\(\Delta x\)</span>的区间内，其中一点<span class="math inline">\(\xi\)</span>的函数值为长，<span class="math inline">\(\Delta x\)</span>为宽围成的面积。</p>
+<p>微积分的核心思想之二是极限。在不断趋近的过程中证明要多近有多近。</p>
+<p>在这里我们首先要做的是趋近。证明当<span class="math inline">\(\Delta x \to 0\)</span>时<span class="math inline">\(f( \xi )\Delta x\)</span>可以任意的接近<span class="math inline">\(\Delta x\)</span>为宽的那个区间内的曲边梯形面积。也就是说 <span class="math display">\[
+\Delta A=\lim_{\Delta x \to 0}{f( \xi )\Delta x}
+\]</span> 好吧，这个证明有点冗长，有时间再补。</p>
+<p>下一步，就是积。把区间<span class="math inline">\([a,b]\)</span>分成<span class="math inline">\(n\)</span>份，每一份的宽度为<span class="math inline">\(\Delta x = \frac{b-a}{n}\)</span>，左右端点为<span class="math inline">\([x_{i-1},x_i]\)</span>，有 <span class="math display">\[
+F(x_n)-F(x_{n-1})+F(x_{n-1})-F(x_{n-2})+\cdots+F(x_1)-F(x_0)=\sum ^{n}_{i=1}\left[f\left( \xi _{i}\right) \Delta x \right]
+\]</span> 这时候，奇迹发生了： <span class="math display">\[
+F(x_n)-F(x_0)=F(b)-F(a)=\sum ^{n}_{i=1}\left[ f\left( \xi _{i}\right) \Delta x \right]
+\]</span> 左边中间的项全部被消掉，这时候我们发现，等式左边跟<span class="math inline">\(n\)</span><strong>无关</strong>了。也就是说，我们可以自信地写下 <span class="math display">\[
+F(b)-F(a)=\lim_{n\to \infty}{\sum ^{n}_{i=1}{\frac{f\left( \xi _{i}\right) (b-a)}{n}}}=\lim_{n\to \infty}{\sum ^{n}_{i=1}{\Delta A_i}}=A
+\]</span> 原本看上去不可能的问题，就这么被轻易解决了。</p>
+<p>由于很多问题都可以用类似求曲边梯形的方法解答，我们专门给<span class="math inline">\(F(b)-F(a)\)</span>分配了符号，并称之为<span class="math inline">\(f(x)\)</span>在区间<span class="math inline">\([a,b]\)</span>上的<strong>定积分</strong>： <span class="math display">\[
+\int_{a}^{b} f(x)\mathrm{d}x=F(b)-F(a)
+\]</span> 上面的性质也成了积分中值定理 <span class="math display">\[
+\int_{a}^{b} f(x)\mathrm{d}x=f( \xi )(b-a)
+\]</span></p>
+<h2 id="从等价无穷小到泰勒公式">从等价无穷小到泰勒公式</h2>
+<h3 id="启程">启程</h3>
 <p>在第 1.7 节 无穷小的比较中就介绍了等价无穷小：</p>
 <blockquote>
 <p>如果 <span class="math inline">\(\lim \dfrac{\beta}{\alpha}=1\)</span>，那么就说 <span class="math inline">\(\beta\)</span> 和 <span class="math inline">\(\alpha\)</span> 是等价无穷小，记作 <span class="math inline">\(\alpha \sim \beta\)</span>.</p>
@@ -325,33 +361,105 @@ f&#39;&#39;(x)=\dfrac{\mathrm{d}}{\mathrm{d}x}\left(\dfrac{\mathrm{d}y}{\mathrm{
 \]</span> 来看个实际用例： <span class="math display">\[
 \lim _{x\rightarrow 0}\dfrac{\sin x}{x^{3}+3x}=\lim _{x\rightarrow 0}\left( \dfrac{\sin x}{x^{3}+3x}\cdot \dfrac{x}{\sin x}\right) = \lim _{x\rightarrow 0}\dfrac{x}{x(x^{2}+3)} = \dfrac{1}{3}
 \]</span> 常用的等价无穷小还有 <span class="math display">\[
-e^x-1\sim x\ (x\to 0)\\
-\ln (1+x)\sim x\ (x\to 0)
-\]</span> 过了一段时间，你学到了拉格朗日中值公式。如果（省略）则 <span class="math display">\[
+\begin{aligned}
+e^x-1&amp;\sim x\ (x\to 0)\\
+\ln (1+x)&amp;\sim x\ (x\to 0)
+\end{aligned}
+\]</span></p>
+<h3 id="岔路">岔路</h3>
+<p>过了一段时间，你学到了拉格朗日中值公式。如果（省略）则 <span class="math display">\[
 f(b)-f(a)=f&#39;( \xi )(b-a)
-\]</span> 回到上面那个实际用例。我们可以说，由 <span class="math inline">\(\sin x\)</span> 在 <span class="math inline">\(x=0\)</span> 的某一邻域内可导，所以存在 <span class="math inline">\(\xi \in \mathring{U}(0,x)\)</span> 使得 <span class="math display">\[
+\]</span> 回到上面那个实际用例。我们可以说，由 <span class="math inline">\(\sin x\)</span> 在 <span class="math inline">\(x=0\)</span> 的某一去心邻域内可导，所以存在 <span class="math inline">\(\xi \in \mathring{U}(0,x)\)</span> 使得 <span class="math display">\[
 \sin x-\sin 0=\cos \xi(x-0)
 \]</span> 当 <span class="math inline">\(x\to 0\)</span> 时有 <span class="math display">\[
 \lim_{x\to 0}\dfrac{\sin x}{x}=\lim_{x\to 0}\dfrac{\sin x-\sin 0}{x-0}=\lim_{x\to 0}\cos \xi=1
 \]</span> 看起来有点意思？还有更有意思的。</p>
-<p>如果 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(F(x)\)</span> 在 <span class="math inline">\(a\)</span> 的某去心邻域内可导，对于下面这个极限 <span class="math display">\[
-\lim_{x\to a}\frac{f(x)}{F(x)}
-\]</span> 我们可以把上面的方法同时应用到分子分母上。也就是说存在 <span class="math inline">\(\xi_1 \in \mathring{U}(a,x), \xi_2 \in \mathring{U}(a,x)\)</span>​ 使得 <span class="math display">\[
-f(x)-f(a)=f&#39;(\xi_1)(x-a)\\
-F(x)-F(a)=F&#39;(\xi_2)(x-a)
-\]</span> 那么就有 <span class="math display">\[
-\frac{f(x)-f(a)}{F(x)-F(a)}=\frac{f&#39;(\xi_1)(x-a)}{F&#39;(\xi_2)(x-a)}=\frac{f&#39;(\xi_1)}{F&#39;(\xi_2)}
-\]</span> 柯西中值定理！</p>
-<p>如果当 <span class="math inline">\(x\to a\)</span> 时函数 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(F(x)\)</span> 都趋于零，且 <span class="math inline">\(F&#39;(x)\neq 0\)</span>，有 <span class="math display">\[
-\lim_{x\to a}\dfrac{f(x)}{F(x)}=\lim_{x\to 0}\dfrac{f(x)-f(a)}{F(x)-F(a)}=\lim_{x\to 0}\frac{f&#39;(\xi_1)(x-a)}{F&#39;(\xi_2)(x-a)}=\lim_{x\to 0}\frac{f&#39;(\xi_1)}{F&#39;(\xi_2)}
-\]</span> 洛必达法则！</p>
+<p>如果 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 在 <span class="math inline">\(a\)</span> 的某去心邻域内可导，当 <span class="math inline">\(x\to a\)</span> 时函数 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 都趋于零，对于下面这个极限 <span class="math display">\[
+\lim_{x\to a}\frac{f(x)}{g(x)}
+\]</span> 我们可以把上面的方法同时应用到分子分母上。我们为了连续性假定 <span class="math inline">\(f(a)=g(a)=0\)</span> 则此时两函数在 <span class="math inline">\(a\)</span> 的某邻域内连续。</p>
+<p>存在 <span class="math inline">\(\xi_1 \in \mathring{U}(a,x), \xi_2 \in \mathring{U}(a,x)\)</span>​ 使得 <span class="math display">\[
+\begin{aligned}
+f(x)-f(a)&amp;=f&#39;(\xi_1)(x-a)\\
+g(x)-g(a)&amp;=g&#39;(\xi_2)(x-a)
+\end{aligned}
+\]</span></p>
+<p>若 <span class="math inline">\(g&#39;(x)\neq 0\)</span>，有 <span class="math display">\[
+\lim_{x\to a}\dfrac{f(x)}{g(x)}=\lim_{x\to a}\dfrac{f(x)-f(a)}{g(x)-g(a)}=\lim_{x\to a}\frac{f&#39;(\xi_1)(x-a)}{g&#39;(\xi_2)(x-a)}=\lim_{x\to a}\frac{f&#39;(x)}{g&#39;(x)}
+\]</span> 洛必达法则！实际上证明洛必达法则并不依赖柯西中值定理。</p>
+<p>上面的推导启示我们，洛必达法则和等价无穷小有某种意义上的联系。若函数 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 在 <span class="math inline">\(x=x_0\)</span> 的某邻域内 <span class="math inline">\(n\)</span> 阶可导，且当 <span class="math inline">\(x\to x_0\)</span> 时 <span class="math inline">\(f(x)\sim g(x)\)</span> 则 <span class="math display">\[
+\lim_{x\to x_0}\dfrac{f(x)}{g(x)}=\lim_{x\to x_0}\frac{f^{(n)}(x)}{g^{(n)}(x)}=1
+\]</span> 另外，在这个过程中你可能会发现 <span class="math display">\[
+\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f&#39;(\xi_1)(b-a)}{g&#39;(\xi_2)(b-a)}=\frac{f&#39;(\xi_1)}{g&#39;(\xi_2)}
+\]</span> 柯西中值定理？其实并不是，柯西中值定理还需要 <span class="math inline">\(\xi_1=\xi_2\)</span>​，构造 <span class="math display">\[
+h(x) = [f(x) - f(a)][g(b) - g(a)] - [g(x) - g(a)][f(b) - f(a)].
+\]</span> 显然 <span class="math inline">\(h(a)=h(b)=0\)</span>​，由罗尔中值定理得 <span class="math display">\[
+0 = h&#39;(\xi) = f&#39;(\xi)(g(b) - g(a)) - g&#39;(\xi)(f(b) - f(a))
+\]</span></p>
+<p>为什么同济高数书上要写成这么别扭的样子呢？ <span class="math display">\[
+h(x)=f(x)-\frac{f(b)-f(a)}{g(b)-g(a)}g(x)
+\]</span> 我猜大概是为了强调 <span class="math inline">\(g(b)-g(a)\neq 0\)</span> 吧（由 <span class="math inline">\(g&#39;(x)\neq 0\)</span> 推出）</p>
+<p>再来看一个洛必达法则的证明：</p>
+<p>若 <span class="math inline">\(f, g : (a, b) \to R\)</span> 在 <span class="math inline">\(x_0 \in (a,b)\)</span> 上可导，且 <span class="math inline">\(f(x_0)=g(x_0)=0\)</span>，<span class="math inline">\(g&#39;(x_0)\neq 0\)</span>. 则 <span class="math display">\[
+\frac{f&#39;(x_0)}{g&#39;(x_0)}=\frac{\lim_{x\to x_0}{\frac{f(x)-f(x_0)}{x-x_0}}}{\lim_{x\to x_0}{\frac{g(x)-g(x_0)}{x-x_0}}}=\lim_{x\to x_0}{\frac{f(x)-f(x_0)}{g(x)-g(x_0)}}=\lim_{x\to x_0}{\frac{f(x)}{g(x)}}
+\]</span> 这就证完了？能用一行证明，为什么上面要绕一大圈？</p>
+<p>请注意洛必达法则的条件</p>
+<blockquote>
+<ol type="1">
+<li>当 <span class="math inline">\(x\to x_0\)</span> 时，函数 <span class="math inline">\(f(x)\)</span> 及 <span class="math inline">\(g(x)\)</span> 都趋于零.</li>
+<li>在点 <span class="math inline">\(x_0\)</span> 的<strong>某去心邻域内</strong>，<span class="math inline">\(f&#39;(x)\)</span> 及 <span class="math inline">\(g&#39;(x)\)</span> 都存在且 <span class="math inline">\(g&#39;(x)\neq 0\)</span>.</li>
+<li><span class="math inline">\(\lim_{x\to x_0}{\frac{f&#39;(x)}{g&#39;(x)}}\)</span> 存在（或为无穷大）.</li>
+</ol>
+</blockquote>
+<p>其中第 1、2 点都不一样，但是证明时假定了 <span class="math inline">\(f(x_0)=g(x_0)=0\)</span> 所以实际上第 1 点没有区别。最关键的是第 2 点：<span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 只需要在 <span class="math inline">\(x_0\)</span> 的某去心邻域可导，不需要在 <span class="math inline">\(x_0\)</span> 可导。与之相对应，公式中也是取两函数导数的比值的极限。</p>
+<h3 id="迷途">迷途</h3>
+<p>我们来看一道 经 典 例 题： <span class="math display">\[
+\lim_{x\to0}\left(\frac{e^x +xe^x}{e^x-1}-\frac{1}{x}\right)
+\]</span> 你可能会这么写： <span class="math display">\[
+\begin{aligned}
+\lim_{x\to 0}\left(\frac{e^x +xe^x}{e^x-1}-\frac{1}{x}\right)&amp;=\lim_{x\to 0}\frac{e^x +xe^x}{e^x-1} - \lim_{x\to 0}\frac{1}{x} \\
+&amp;=\lim_{x\to 0}\frac{e^x +xe^x}{e^x-1}\times \lim_{x\to 0}\frac{e^x-1}{x}-\lim_{x\to 0}\frac{1}{x} \\
+&amp;=\lim_{x\to 0}\left(\frac{e^x +xe^x}{e^x-1} \times \frac{e^x-1}{x}\right)-\lim_{x\to 0}\frac{1}{x} \\
+&amp;=\lim_{x\to 0}\left(\frac{e^x +xe^x}{x}-\frac{1}{x}\right) \\
+&amp;=\lim_{x\to 0}\frac{e^x +xe^x-1}{x} \\
+&amp;=\lim_{x\to 0}\left(2e^x-xe^x\right) \\
+&amp;=2
+\end{aligned}
+\]</span></p>
+<p>然而！答案是 <span class="math inline">\(\frac{2}{3}\)</span>.</p>
+<p>错在哪呢？其实第一步就错了，拆出来成了 <span class="math inline">\(\infty -\infty\)</span>，而极限运算法则<strong>只在两极限存在时才成立</strong>，不能拆。如果你不是这么做的但是得到了错误的结果，请自行根据 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/62029838">这篇文章</a> 对号入座。</p>
+<p>辅导书和老师可能会告诉你，等价无穷小的用法仅限于极限值整体乘以 1 再代换！这种说法确实没错，但是事情是不是就这么简单地结束了呢？为什么有的情况下替换不会出现问题呢？</p>
+<p>请看同济高数第 1-7 节定理 1: <span class="math inline">\(\beta\)</span> 和 <span class="math inline">\(\alpha\)</span> 是等价无穷小的充分必要条件为 <span class="math display">\[
+\beta=\alpha + o(\alpha)
+\]</span> 可以看出，两个等价无穷小之间差了一个高阶无穷小。那么什么时候不能用等价无穷小呢？</p>
+<p>就是除了无穷小以外的量全部都被消去的情况，这时候高阶无穷小才会左右极限的结果，而它会受到等价无穷小替换的影响而不准确。</p>
+<p>也就是说</p>
+<blockquote>
+<p>已知 <span class="math inline">\(\lim_{x\to x_0}{\frac{\alpha_1}{\alpha_2}}\)</span> 存在， <span class="math inline">\(\alpha_1,\alpha_{2},\beta_{1},\beta_{2}\)</span> 都是 <span class="math inline">\(x\rightarrow x_0\)</span> 的无穷小量，且 <span class="math inline">\(\alpha_1\sim\beta_1\)</span>，<span class="math inline">\(\alpha_{2}\sim\beta_{2}\)</span>.</p>
+<p>若 <span class="math inline">\(\lim_{x\rightarrow x_0}{\frac{\alpha_1}{\alpha_2}} \neq 1\)</span> （两者的泰勒展开的第一项不相同），则 <span class="math inline">\(\alpha_1-\alpha_2\sim \beta_1-\beta_2\)</span>;</p>
+<p>若 <span class="math inline">\(\lim_{x\rightarrow x_0}{\frac{\alpha_1}{\alpha_2}} \neq -1\)</span>（两者的泰勒展开的第一项不互为相反数），则 <span class="math inline">\(\alpha_1+\alpha_2\sim\beta_1+\beta_2\)</span>.</p>
+</blockquote>
+<h3 id="终点">终点</h3>
+<p>上面看似已经把等价无穷小的用法说清楚了，但是还有很多隐藏的问题。比如说，极限运算法则必须要两个极限存在才成立，那么如果我要求的极限本来就不存在呢？难道我每次用之前还要证明这个极限存在？</p>
+<p>所以我们不如用回等价无穷小的充要条件 <span class="math display">\[
+\alpha \sim \beta \Leftrightarrow \beta=\alpha + o(\alpha)
+\]</span> 等价替换永远是最直接、最少出错的。</p>
+<p>而实际上我们用等价无穷小的时候几乎从来都是换成多项式函数，因为它好化简、好求极限。</p>
 <p>又过了一段时间，你学到了泰勒公式，它是拉格朗日中值公式的推广（令 <span class="math inline">\(n=2m\)</span>） <span class="math display">\[
 \begin{align}
-\sin \left(x\right)&amp;= x-{\frac {x^{3}}{3!}}+{\frac {x^{5}}{5!}}-{\frac {x^{7}}{7!}}+\cdots +(-1)^{m-1}\dfrac{x^{2m-1}}{(2m-1)!}+R_{2m}(x)\\
-e^{x}&amp;=1+x+{\frac {x^{2}}{2!}}+{\frac {x^{3}}{3!}}+\cdots +\frac{x^{n-1}}{(n-1)!} +R_{n}(x)\\
-\ln(1+x)&amp;=x-{\frac {x^{2}}{2}}+{\frac {x^{3}}{3}}-\cdots+(-1)^{n-1}\dfrac{1}{n}x^n+R_{n}(x)
+\sin \left(x\right)&amp;= x-{\frac {x^{3}}{3!}}+{\frac {x^{5}}{5!}}-{\frac {x^{7}}{7!}}+\cdots +(-1)^{m-1}\dfrac{x^{2m-1}}{(2m-1)!}+o(x^{2m})\\
+e^{x}&amp;=1+x+{\frac {x^{2}}{2!}}+{\frac {x^{3}}{3!}}+\cdots +\frac{x^{n-1}}{(n-1)!} +o(x^n)\\
+\ln(1+x)&amp;=x-{\frac {x^{2}}{2}}+{\frac {x^{3}}{3}}-\cdots+(-1)^{n-1}\dfrac{1}{n}x^n+o(x^n)
 \end{align}
 \]</span></p>
+<p>接下来不用多说了吧。<strong>用泰勒公式，别用等价无穷小。</strong></p>
+<p>后记：这篇文章写的很混乱，中途删了又写，写了又删。最后终于在高数期末考前仓促结尾，行文思路混乱，更别说严谨性。现在回头反思，总感觉自己太过于相信自己的所谓直觉，推导一番后又发现和目标不搭边。总结：想的太多，读的太少，算的更少。</p>
+<p><strong>References:</strong></p>
+<ol type="1">
+<li><a target="_blank" rel="noopener" href="http://www.math.pitt.edu/~sparling/23012/23012lhopital1/node1.html">Cauchy's Mean Value Theorem and L'Hopital's rule</a></li>
+<li><a target="_blank" rel="noopener" href="https://home.iitk.ac.in/~psraj/mth101/lecture_notes/lecture7.pdf">(PDF)Lecture 7 : Cauchy Mean Value Theorem, L'Hospital Rule</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/62029838">高数常见坑点：等价无穷小</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/99373470">“等价无穷小量的替换”的详析 - 李亦督的文章 - 知乎</a></li>
+</ol>
 
     </div>
 
@@ -396,7 +504,7 @@ e^{x}&amp;=1+x+{\frac {x^{2}}{2!}}+{\frac {x^{3}}{3!}}+\cdots +\frac{x^{n-1}}{(n
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
