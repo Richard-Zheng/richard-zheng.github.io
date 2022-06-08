@@ -1061,7 +1061,7 @@ pre code {
     display: none;
   }
 }
-.header {
+header.header {
   background: var(--content-bg-color);
 }
 .header-inner {
@@ -1083,7 +1083,7 @@ pre code {
   flex-shrink: 0;
   padding: 0 10px;
 }
-.use-motion .header,
+.use-motion header.header,
 .use-motion .site-brand-container .toggle {
   opacity: 0;
 }
@@ -2637,7 +2637,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #835c14;
+  background: #fff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
